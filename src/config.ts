@@ -72,12 +72,12 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "哔哩哔哩",
 			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/一块流心煎蛋",
+			url: "https://space.bilibili.com/35270927",
 		},
 		{
 			name: "微博",
 			icon: "fa6-brands:weibo",
-			url: "https://weibo.com/u/随一个昵称",
+			url: "https://weibo.com/u/7820664293",
 		},
 		{
 			name: "GitHub",
@@ -87,7 +87,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Steam",
 			icon: "fa6-brands:steam",
-			url: "https://steamcommunity.com/id/小鱼干/",
+			url: "https://steamcommunity.com/id/小鱼干",
 		},
 	],
 };
