@@ -3,7 +3,7 @@ title: Exploration of Digital World:My First Blog
 published: 2025-06-19
 description: Building a Hugo static blog from scratch.
 tags: [Hugo, Blogging]
-category: Learning Journey
+category: Learning Journeys
 draft: false
 ---
 
