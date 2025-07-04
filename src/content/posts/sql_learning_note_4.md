@@ -1,10 +1,10 @@
 ---
-title: SQL Learning Note_4
+title: WHERE & HAVING
 published: 2025-06-29
-description: WHERE&HAVING
+description: SQL Learning Note_4
 tags: 
-  - Notes
-category: Learning Journeys
+  - SQL
+category: Notes
 draft: false
 ---
 

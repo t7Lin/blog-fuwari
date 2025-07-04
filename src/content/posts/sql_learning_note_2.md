@@ -1,10 +1,10 @@
 ---
-title: SQL Learning Note_2
+title: ORDER BY & IN 排序
 published: 2025-06-27
-description: ORDER BY&IN排序
+description: SQL Learning Note_2
 tags: 
-  - Notes
-category: Learning Journeys
+  - SQL
+category: Notes
 draft: false
 ---
 

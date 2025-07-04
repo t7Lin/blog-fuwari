@@ -1,10 +1,10 @@
 ---
-title: SQL Learning Note_6
+title: CASE WHEN
 published: 2025-07-01
-description: CASE WHEN
+description: SQL Learning Note_6
 tags: 
-  - Notes
-category: Learning Journeys
+  - SQL
+category: Notes
 draft: false
 ---
 

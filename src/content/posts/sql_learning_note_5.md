@@ -1,10 +1,10 @@
 ---
-title: SQL Learning Note_5
+title: JOIN ON
 published: 2025-06-30
-description: JOIN ON
+description: SQL Learning Note_5
 tags: 
-  - Notes
-category: Learning Journeys
+  - SQL
+category: Notes
 draft: false
 ---
 

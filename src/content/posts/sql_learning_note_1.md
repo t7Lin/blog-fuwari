@@ -1,10 +1,10 @@
 ---
-title: SQL Learning Note_1
+title: SQL basic syntax
 published: 2025-06-26
-description: SQL basic syntax
+description: SQL Learning Note_1
 tags: 
-  - Notes
-category: Learning Journeys
+  - SQL
+category: Notes
 draft: false
 ---
 

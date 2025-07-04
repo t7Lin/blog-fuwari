@@ -1,9 +1,9 @@
 ---
-title: Exploration of Digital World:My First Blog
+title: Building a Hugo Static Blog From Scratch
 published: 2025-06-19
-description: Building a Hugo static blog from scratch.
+description: Exploration of Digital World:My First Blog.
 tags: [Hugo, Blogging]
-category: Learning Journeys
+category: Venturing Into Tech
 draft: false
 ---
 

@@ -1,10 +1,10 @@
 ---
-title: SQL Learning Note_3
+title: 分组与筛选；聚合函数；子查询
 published: 2025-06-28
-description: 分组与筛选；聚合函数；子查询
+description: SQL Learning Note_3
 tags: 
-  - Notes
-category: Learning Journeys
+  - SQL
+category: Notes
 draft: false
 ---
 

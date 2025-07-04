@@ -1,10 +1,10 @@
 ---
-title: Summary of the Half Past Year
+title: 2025 First Half Summary
 published: 2025-06-13
-description: 2025 First Half Summary
+description: Summary of half past year
 image: ./summary_of_half_past_year.png
 tags: [Memories, Thoughts]
-category: Personal Reflections
+category: Reflections
 draft: false
 ---
 
