@@ -17,7 +17,7 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: 'assets/images/背景图.png', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		src: 'assets/images/1.png', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: false, // Display the credit text of the banner image
@@ -66,7 +66,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "网易云音乐",
 			icon: "fa6-solid:music",
-			url: "https://music.163.com/#/user/home?id=Chillyt",
+			url: "https://music.163.com/#/user/home?id=555887312",
 		},
 		{
 			name: "哔哩哔哩",
