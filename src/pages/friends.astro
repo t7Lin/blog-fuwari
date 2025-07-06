@@ -4,25 +4,90 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Friends">
   <div style="max-width:800px; margin:0 auto; padding:2rem">
-    <h1 style="font-size:2rem">Friends</h1>
-    <p style="margin-bottom:2rem">My favorite blogs and websites</p>
+    <h1 style="font-size:2.5rem; text-align:center; margin-bottom:0.5rem; color:#e91e63">Friends</h1>
+    <p style="text-align:center; color:#666; margin-bottom:2.5rem; font-size:1.1rem">My favorite blogs and websites</p>
     
-    <div style="display:grid; gap:1rem">
-      <a href="https://www.afo.im" 
-         style="display:block; padding:1rem; background:#f8f8f8; border-radius:8px; text-decoration:none; color:#333"
-         target="_blank">
-        <h3 style="margin:0; color:#e91e63">AcoFork</h3>
-        <p style="margin:0.5rem 0 0; color:#666">Protect what you love.</p>
-      </a>
-
-    <a href="https://falling42.net" 
-         style="display:block; padding:1rem; background:#f8f8f8; border-radius:8px; text-decoration:none; color:#333"
-         target="_blank">
-        <h3 style="margin:0; color:#e91e63">Falling42</h3>
-        <p style="margin:0.5rem 0 0; color:#666">Fate lies within the light cone.</p>
-      </a>
-
+    <div style="display:grid; gap:1.8rem">
+      <!-- AcoFork 卡片 -->
+      <div style="display:flex; background:#fff; border-radius:14px; box-shadow:0 5px 20px rgba(0,0,0,0.05); border:1px solid #eee; overflow:hidden; transition:all 0.3s ease">
+        <div style="width:120px; min-width:120px; background:#f8f8f8; display:flex; align-items:center; justify-content:center; padding:1.5rem">
+          <img src="https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=5" 
+               style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:3px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,0.1)"
+               alt="AcoFork"
+               onerror="this.src='https://ui-avatars.com/api/?name=AcoFork&background=ff6b6b&color=fff&size=128'">
+        </div>
+        <div style="padding:1.5rem; flex-grow:1">
+          <h3 style="margin:0; font-size:1.4rem; color:#e91e63">AcoFork</h3>
+          <p style="margin:0.5rem 0 0; color:#666; line-height:1.5">Protect what you love.</p>
+          <a href="https://www.afo.im" 
+             style="display:inline-block; margin-top:1rem; color:#2196f3; text-decoration:none; font-weight:500"
+             target="_blank">
+            www.afo.im →
+          </a>
+        </div>
+      </div>
       
+      <!-- 龙的博客卡片 -->
+      <div style="display:flex; background:#fff; border-radius:14px; box-shadow:0 5px 20px rgba(0,0,0,0.05); border:1px solid #eee; overflow:hidden; transition:all 0.3s ease">
+        <div style="width:120px; min-width:120px; background:#f8f8f8; display:flex; align-items:center; justify-content:center; padding:1.5rem">
+          <img src="https://q1.qlogo.cn/g?b=qq&nk=2042177831&s=640" 
+               style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:3px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,0.1)"
+               alt="或许是一只龙的博客"
+               onerror="this.src='https://ui-avatars.com/api/?name=龙&background=4a86e8&color=fff&size=128'">
+        </div>
+        <div style="padding:1.5rem; flex-grow:1">
+          <h3 style="margin:0; font-size:1.4rem; color:#e91e63">或许是一只龙的博客</h3>
+          <p style="margin:0.5rem 0 0; color:#666; line-height:1.5">一只神秘小龙</p>
+          <a href="https://497995.xyz" 
+             style="display:inline-block; margin-top:1rem; color:#2196f3; text-decoration:none; font-weight:500"
+             target="_blank">
+            497995.xyz →
+          </a>
+        </div>
+      </div>
+      
+      <!-- Falling42 卡片 -->
+      <div style="display:flex; background:#fff; border-radius:14px; box-shadow:0 5px 20px rgba(0,0,0,0.05); border:1px solid #eee; overflow:hidden; transition:all 0.3s ease">
+        <div style="width:120px; min-width:120px; background:#f8f8f8; display:flex; align-items:center; justify-content:center; padding:1.5rem">
+          <img src="https://s2.loli.net/2025/05/17/Cbm7ogkBWAq3ST8.png" 
+               style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:3px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,0.1)"
+               alt="Falling42"
+               onerror="this.src='https://ui-avatars.com/api/?name=Falling42&background=34a853&color=fff&size=128'">
+        </div>
+        <div style="padding:1.5rem; flex-grow:1">
+          <h3 style="margin:0; font-size:1.4rem; color:#e91e63">Falling42</h3>
+          <p style="margin:0.5rem 0 0; color:#666; line-height:1.5">Fate lies within the light cone.</p>
+          <a href="https://falling42.net" 
+             style="display:inline-block; margin-top:1rem; color:#2196f3; text-decoration:none; font-weight:500"
+             target="_blank">
+            falling42.net →
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align:center; padding:1.8rem; background:linear-gradient(135deg, #fdf2f8, #f0f9ff); border-radius:14px; margin-top:3.5rem; border-left:5px solid #e91e63">
+      <p style="margin:0; font-size:1.1rem">Want to exchange links? <a href="mailto:chilltian@outlook.com" style="color:#e91e63; text-decoration:none; font-weight:bold">Contact me</a></p>
     </div>
   </div>
+  
+  <script>
+    // 添加悬停效果
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('div > div');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-8px)';
+          this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+          this.style.borderColor = '#e91e63';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
+          this.style.borderColor = '#eee';
+        });
+      });
+    });
+  </script>
 </Layout>
