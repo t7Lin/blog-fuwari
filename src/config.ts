@@ -69,29 +69,9 @@ export const profileConfig: ProfileConfig = {
 			url: "mailto:chilltian@outlook.com",
 		},
 		{
-			name: "网易云音乐",
-			icon: "fa6-solid:music",
-			url: "https://music.163.com/#/user/home?id=555887312",
-		},
-		{
-			name: "哔哩哔哩",
-			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/35270927",
-		},
-		{
-			name: "微博",
-			icon: "fa6-brands:weibo",
-			url: "https://weibo.com/u/7820664293",
-		},
-		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/t7Lin",
-		},
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://steamcommunity.com/profiles/76561199361313180/",
 		},
 	],
 };
