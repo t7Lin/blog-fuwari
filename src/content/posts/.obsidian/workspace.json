@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "测试.md",
+                "file": "sql_learning_note_5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "测试"
+              "title": "sql_learning_note_5"
             }
           }
         ]
@@ -167,6 +167,10 @@
   },
   "active": "54513e674bb63144",
   "lastOpenFiles": [
+    "sql_learning_note_4.md",
+    "sql_learning_note_3.md",
+    "sql_learning_note_2.md",
+    "sql_learning_note_1.md",
     "charmmy_grass.png",
     "guide/index.md",
     "guide/cover.jpeg",

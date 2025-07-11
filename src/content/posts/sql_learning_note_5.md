@@ -43,6 +43,18 @@ FROM orders o
 JOIN customers c ON o.customer_id = c.id
 JOIN products p ON o.product_id = p.id
 ```
+
+**经典例题：**
+展示电影类型“Alien”的演员清单。
+https://chat.deepseek.com/a/chat/s/56193c33-56e1-464c-9134-ad60c1f846e4
+
+```sql
+SELECT actor.name  -- 目标表：actor，我们想要演员名字
+FROM movie   -- 过滤表：通过movie表过滤电影
+JOIN casting ON movie.id = casting.movieid  -- 连接表：casting连接movie
+JOIN actor ON actor.id = casting.actorid  -- 连接表：casting连接actor
+WHERE title = 'Alien'  -- 过滤条件在movie表上
+```
 ### 3. 复杂连接条件
 ```sql
 SELECT *
