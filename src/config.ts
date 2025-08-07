@@ -69,6 +69,20 @@ export const profileConfig: ProfileConfig = {
 			url: "mailto:chilltian@outlook.com",
 		},
 		{
+			name: "bilibili",
+			icon: "fa6-brands:bilibili", // Visit https://icones.js.org/ for icon codes
+			// You will need to install the corresponding icon set if it's not already included
+			// `pnpm add @iconify-json/<icon-set-name>`
+			url: "https://space.bilibili.com/35270927?spm_id_from=333.1007.0.0",
+		},
+		{
+			name: "weibo",
+			icon: "fa6-brands:weibo", // Visit https://icones.js.org/ for icon codes
+			// You will need to install the corresponding icon set if it's not already included
+			// `pnpm add @iconify-json/<icon-set-name>`
+			url: "https://weibo.com/u/7820664293",
+		},
+		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/t7Lin",
