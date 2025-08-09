@@ -12,12 +12,12 @@ export const siteConfig: SiteConfig = {
 	subtitle: "Adventure awaits!",
 	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
-		hue: 335, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 305, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
 	},
 	banner: {
 		enable: true,
-		src: 'assets/images/1.png', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		src: 'assets/images/yunchongyueya.png', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: false, // Display the credit text of the banner image
@@ -31,7 +31,7 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [    // Leave this array empty to use the default favicon
      {
-       src: './src/assets/images/charmmy.png',    // Path of the favicon, relative to the /public directory
+       src: './src/assets/images/avatar.png',    // Path of the favicon, relative to the /public directory
        //theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
        sizes: '128x128',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
      }
@@ -57,7 +57,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/charmmy.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Fishlet",
 	bio: "Some days you bloom.Some days you grow roots.Booth matter.",
 	links: [
