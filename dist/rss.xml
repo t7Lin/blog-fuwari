@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Chillyt&apos;s blog</title><description>Adventure awaits!</description><link>https://fishlet.top/</link><language>en</language><item><title>CASE WHEN</title><link>https://fishlet.top/posts/sql_learning_note_6/</link><guid isPermaLink="true">https://fishlet.top/posts/sql_learning_note_6/</guid><description>SQL Learning Note_6</description><pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;一、CASE WHEN 基础&lt;/h3&gt;
+&lt;h4&gt;1. 作用&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;实现条件逻辑（类似编程语言中的&lt;code&gt;if-else&lt;/code&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在SELECT、WHERE、ORDER BY等子句中使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2. 两种语法形式&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;(1) 简单CASE表达式&lt;/strong&gt; → 等值比较&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+CASE 列名
+
+WHEN 值1 THEN 结果1
+
+WHEN 值2 THEN 结果2
+
+...
+
+ELSE 默认结果
+
+END
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;(2) 搜索CASE表达式&lt;/strong&gt; → 复杂条件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+CASE
+
+WHEN 条件1 THEN 结果1
+
+WHEN 条件2 THEN 结果2
+
+...
+
+ELSE 默认结果
+
+END
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;二、核心功能详解&lt;/h3&gt;
+&lt;h4&gt;1. 在SELECT中创建新列&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT name,
+
+CASE WHEN population &amp;gt; 100000000 THEN &apos;大国&apos;
+
+WHEN population &amp;gt; 50000000 THEN &apos;中等国&apos;
+
+ELSE &apos;小国&apos;
+
+END AS country_size
+
+FROM world
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;2. 在WHERE中条件过滤&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT *
+
+FROM orders
+
+WHERE
+
+CASE
+
+WHEN status = &apos;紧急&apos; THEN NOW() - order_date &amp;lt; INTERVAL &apos;1 day&apos;
+
+ELSE NOW() - order_date &amp;lt; INTERVAL &apos;7 days&apos;
+
+END
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;3. 在ORDER BY中自定义排序&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT winner, subject
+
+FROM nobel
+
+ORDER BY
+
+CASE WHEN subject IN (&apos;Chemistry&apos;,&apos;Physics&apos;) THEN 1 ELSE 0 END, -- 化学物理排最后
+
+subject
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;4. 在GROUP BY中条件聚合&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT
+
+SUM(CASE WHEN subject = &apos;Physics&apos; THEN 1 ELSE 0 END) AS physics_count,
+
+AVG(CASE WHEN yr &amp;gt;= 2000 THEN prize_amount END) AS avg_modern_prize
+
+FROM nobel
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;三、高级技巧&lt;/h3&gt;
+&lt;h4&gt;1. 嵌套CASE&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+CASE
+
+WHEN score &amp;gt; 90 THEN &apos;A&apos;
+
+WHEN score &amp;gt; 80 THEN
+
+CASE WHEN bonus = 1 THEN &apos;B+&apos; ELSE &apos;B&apos; END
+
+...
+
+END
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;2. 与聚合函数结合&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+-- 行列转换（PIVOT）
+
+SELECT
+
+yr,
+
+COUNT(CASE WHEN subject = &apos;Physics&apos; THEN 1 END) AS physics,
+
+COUNT(CASE WHEN subject = &apos;Chemistry&apos; THEN 1 END) AS chemistry
+
+FROM nobel
+
+GROUP BY yr
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;3. 处理NULL值&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT name,
+
+CASE WHEN address IS NULL THEN &apos;未知&apos; ELSE address END AS safe_address
+
+FROM users
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;四、经典案例：奖项分类&lt;/h3&gt;
+&lt;h4&gt;题目要求&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将诺贝尔奖分为三类显示：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;科学奖（物理、化学、医学）→ 标记为 &lt;code&gt;Science&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;文学与和平奖 → 标记为 &lt;code&gt;Arts&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;其他 → 标记为 &lt;code&gt;Other&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;解决方案&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT winner, subject,
+
+CASE
+
+WHEN subject IN (&apos;Physics&apos;,&apos;Chemistry&apos;,&apos;Medicine&apos;) THEN &apos;Science&apos;
+
+WHEN subject IN (&apos;Literature&apos;,&apos;Peace&apos;) THEN &apos;Arts&apos;
+
+ELSE &apos;Other&apos;
+
+END AS category
+
+FROM nobel
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;结果示例&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;winner&lt;/th&gt;
+&lt;th&gt;subject&lt;/th&gt;
+&lt;th&gt;category&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Albert Einstein&lt;/td&gt;
+&lt;td&gt;Physics&lt;/td&gt;
+&lt;td&gt;Science&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Marie Curie&lt;/td&gt;
+&lt;td&gt;Chemistry&lt;/td&gt;
+&lt;td&gt;Science&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ernest Hemingway&lt;/td&gt;
+&lt;td&gt;Literature&lt;/td&gt;
+&lt;td&gt;Arts&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content:encoded></item><item><title>JOIN ON</title><link>https://fishlet.top/posts/sql_learning_note_5/</link><guid isPermaLink="true">https://fishlet.top/posts/sql_learning_note_5/</guid><description>SQL Learning Note_5</description><pubDate>Mon, 30 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;https://sqlzoo.net/wiki/The_JOIN_operation&lt;/p&gt;
+&lt;h2&gt;🧩 核心概念&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;JOIN ON&lt;/strong&gt; 是 SQL 中连接多个表的操作，基于两个表之间的&lt;strong&gt;关联字段&lt;/strong&gt;建立关系：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT 列...
+FROM 表A
+JOIN 表B ON 表A.关联列 = 表B.关联列
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;🔍 四大连接类型&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;连接类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;th&gt;结果特点&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;INNER JOIN&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;返回匹配的记录&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;JOIN...ON A.id=B.id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;仅两表匹配的行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;LEFT JOIN&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;返回左表所有记录+匹配的右表记录&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LEFT JOIN...ON...&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;左表完整，右表可能为NULL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;RIGHT JOIN&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;返回右表所有记录+匹配的左表记录&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RIGHT JOIN...ON...&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;右表完整，左表可能为NULL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;FULL JOIN&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;返回两个表所有记录&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;FULL JOIN...ON...&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;两表完整，不匹配部分为NUL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;💡 最佳实践指南&lt;/h2&gt;
+&lt;h3&gt;1. 标准连接语法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;SELECT orders.id, customers.name
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.id
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;2. 多表连接&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;SELECT o.order_date, c.name, p.product_name
+FROM orders o
+JOIN customers c ON o.customer_id = c.id
+JOIN products p ON o.product_id = p.id
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;经典例题：&lt;/strong&gt;
+展示电影类型“Alien”的演员清单。
+https://chat.deepseek.com/a/chat/s/56193c33-56e1-464c-9134-ad60c1f846e4&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT actor.name  -- 目标表：actor，我们想要演员名字
+FROM movie   -- 过滤表：通过movie表过滤电影
+JOIN casting ON movie.id = casting.movieid  -- 连接表：casting连接movie
+JOIN actor ON actor.id = casting.actorid  -- 连接表：casting连接actor
+WHERE title = &apos;Alien&apos;  -- 过滤条件在movie表上
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;3. 复杂连接条件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM employees e
+JOIN departments d ON e.dept_id = d.id AND d.location = &apos;NY&apos;
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>WHERE &amp; HAVING</title><link>https://fishlet.top/posts/sql_learning_note_4/</link><guid isPermaLink="true">https://fishlet.top/posts/sql_learning_note_4/</guid><description>SQL Learning Note_4</description><pubDate>Sun, 29 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;https://sqlzoo.net/wiki/SUM_and_COUNT&lt;/p&gt;
+&lt;h3&gt;🎯 WHERE和HAVING根本区别总结&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;code&gt;WHERE&lt;/code&gt;&lt;/th&gt;
+&lt;th&gt;&lt;code&gt;HAVING&lt;/code&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;作用对象&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;原始数据行（分组前）&lt;/td&gt;
+&lt;td&gt;分组后的聚合结果（分组后）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;执行时机&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;在 &lt;code&gt;GROUP BY&lt;/code&gt; 之前执行&lt;/td&gt;
+&lt;td&gt;在 &lt;code&gt;GROUP BY&lt;/code&gt; 之后执行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;可使用&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;列名、普通函数&lt;/td&gt;
+&lt;td&gt;聚合函数（SUM, COUNT, AVG 等）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;不可用&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;聚合函数&lt;/td&gt;
+&lt;td&gt;原始列名（除非在 GROUP BY 中）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;类比&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;筛选原材料&lt;/td&gt;
+&lt;td&gt;筛选成品&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;&lt;strong&gt;经典例题&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4&gt;Counting big countries in each continent&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For each &lt;strong&gt;continent&lt;/strong&gt; show the &lt;strong&gt;continent&lt;/strong&gt; and number of countries with populations of at least 10 million.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT continent, COUNT(name)
+FROM world
+WHERE population &amp;gt;= 10000000
+GROUP BY continent
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;continent&lt;/th&gt;
+&lt;th&gt;COUNT(name)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Africa&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Asia&lt;/td&gt;
+&lt;td&gt;26&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Caribbean&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Eurasia&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Europe&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;North America&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Oceania&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;South America&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4&gt;Counting big continents&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;List the continents that &lt;strong&gt;have&lt;/strong&gt; a total population of at least 100 million.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT continent
+FROM world
+GROUP BY continent
+HAVING SUM(population) &amp;gt;= 100000000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;continent&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Africa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Asia&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Eurasia&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Europe&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;North America&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;South America&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content:encoded></item><item><title>分组与筛选；聚合函数；子查询</title><link>https://fishlet.top/posts/sql_learning_note_3/</link><guid isPermaLink="true">https://fishlet.top/posts/sql_learning_note_3/</guid><description>SQL Learning Note_3</description><pubDate>Sat, 28 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial&lt;/p&gt;
+&lt;h3&gt;📌 &lt;strong&gt;核心函数与运算符&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键词&lt;/th&gt;
+&lt;th&gt;定义&lt;/th&gt;
+&lt;th&gt;使用场景&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CONCAT()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;连接字符串&lt;/td&gt;
+&lt;td&gt;组合文本和计算结果&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CONCAT(ROUND(ratio*100), &apos;%&apos;) → &apos;25%&apos;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;%&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1. 数学取模  &amp;lt;br&amp;gt;2. 百分比符号&lt;/td&gt;
+&lt;td&gt;1. 奇偶判断  &amp;lt;br&amp;gt;2. 显示百分比&lt;/td&gt;
+&lt;td&gt;1. &lt;code&gt;population % 2 = 0&lt;/code&gt;（偶人口）  &amp;lt;br&amp;gt;2. &lt;code&gt;11%&lt;/code&gt;（最终显示格式）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;🔍 &lt;strong&gt;分组与筛选&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;子句&lt;/th&gt;
+&lt;th&gt;定义&lt;/th&gt;
+&lt;th&gt;执行顺序&lt;/th&gt;
+&lt;th&gt;使用场景&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GROUP BY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;按列分组&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;分组统计&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SELECT continent, COUNT(*) FROM world GROUP BY continent&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;HAVING&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;筛选分组后的结果&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;对聚合结果过滤&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;HAVING AVG(population) &amp;gt; 10000000&lt;/code&gt;（筛选平均人口&amp;gt;1000万的洲）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;WHERE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;筛选原始数据行&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;聚合前的数据过滤&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;WHERE continent = &apos;Europe&apos;&lt;/code&gt;（仅处理欧洲国家）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;执行顺序&lt;/strong&gt;：&lt;code&gt;WHERE&lt;/code&gt; → &lt;code&gt;GROUP BY&lt;/code&gt; → &lt;code&gt;HAVING&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;📊 &lt;strong&gt;聚合函数&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数&lt;/th&gt;
+&lt;th&gt;定义&lt;/th&gt;
+&lt;th&gt;使用场景&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;COUNT()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;统计行数&lt;/td&gt;
+&lt;td&gt;计算数量&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;COUNT(*)&lt;/code&gt;（总行数）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SUM()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;求和&lt;/td&gt;
+&lt;td&gt;计算总和&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SUM(gdp)&lt;/code&gt;（GDP总和）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;AVG()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;求平均值&lt;/td&gt;
+&lt;td&gt;计算平均水平&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;AVG(population)&lt;/code&gt;（平均人口）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;MAX()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;求最大值&lt;/td&gt;
+&lt;td&gt;找最高值&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;MAX(life_expectancy)&lt;/code&gt;（最长寿命）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;MIN()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;求最小值&lt;/td&gt;
+&lt;td&gt;找最低值&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;MIN(area)&lt;/code&gt;（最小面积）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;🔄 &lt;strong&gt;子查询 (Subqueries)&lt;/strong&gt;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;定义&lt;/th&gt;
+&lt;th&gt;使用场景&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;标量子查询&lt;/td&gt;
+&lt;td&gt;返回单个值&lt;/td&gt;
+&lt;td&gt;作为比较对象或计算参数&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SELECT name FROM world WHERE population &amp;gt; (SELECT population FROM ...)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;列子查询&lt;/td&gt;
+&lt;td&gt;返回一列值&lt;/td&gt;
+&lt;td&gt;与&lt;code&gt;IN&lt;/code&gt;搭配使用&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SELECT name FROM world WHERE continent IN (SELECT continent FROM ...)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;关联子查询&lt;/td&gt;
+&lt;td&gt;引用外部查询的子查询&lt;/td&gt;
+&lt;td&gt;复杂的分组比较&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SELECT name FROM world w1 WHERE population &amp;gt; (SELECT AVG(population) FROM world w2 WHERE w2.continent = w1.continent)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;🧩 &lt;strong&gt;关键技巧总结&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;去重显示&lt;/strong&gt; → 用 &lt;code&gt;DISTINCT&lt;/code&gt;&lt;pre&gt;&lt;code&gt;SELECT DISTINCT continent FROM world
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt; 
+2. **百分比计算** → 子查询 + 数学运算
+    ```sql
+    100 * population / (SELECT population FROM world WHERE name=&apos;Germany&apos;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;条件排序&lt;/strong&gt; → &lt;code&gt;CASE&lt;/code&gt; + &lt;code&gt;ORDER BY&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;ORDER BY CASE WHEN name IN (&apos;A&apos;,&apos;B&apos;) THEN 0 ELSE 1 END
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;范围筛选&lt;/strong&gt; → 双子查询比较&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;WHERE population BETWEEN (SELECT ...) AND (SELECT ...)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;分组后筛选&lt;/strong&gt; → &lt;code&gt;GROUP BY&lt;/code&gt; + &lt;code&gt;HAVING&lt;/code&gt;&lt;pre&gt;&lt;code&gt;SELECT continent 
+FROM world 
+GROUP BY continent 
+HAVING COUNT(*) &amp;gt; 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>ORDER BY &amp; IN 排序</title><link>https://fishlet.top/posts/sql_learning_note_2/</link><guid isPermaLink="true">https://fishlet.top/posts/sql_learning_note_2/</guid><description>SQL Learning Note_2</description><pubDate>Fri, 27 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;&lt;strong&gt;SQL 排序核心总结 (&lt;code&gt;ORDER BY&lt;/code&gt; + &lt;code&gt;ASC&lt;/code&gt;/&lt;code&gt;DESC&lt;/code&gt;)&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;https://sqlzoo.net/wiki/SELECT_from_Nobel_Tutorial&lt;/p&gt;
+&lt;h4&gt;1. 基本定义&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键字&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;默认&lt;/th&gt;
+&lt;th&gt;排序方向&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ASC&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;升序 (Ascending)&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;从小到大 / 从早到晚&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;A→Z&lt;/code&gt; &lt;code&gt;1→100&lt;/code&gt; &lt;code&gt;2000→2023&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;DESC&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;降序 (Descending)&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;从大到小 / 从晚到早&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Z→A&lt;/code&gt; &lt;code&gt;100→1&lt;/code&gt; &lt;code&gt;2023→2000&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;2.核心语法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;SELECT 列1, 列2
+FROM 表名
+ORDER BY 
+  排序列1 [ASC|DESC],  -- 第一优先级
+  排序列2 [ASC|DESC]   -- 第二优先级（当列1值相同时生效）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;3.经典例题&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Knights in order&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;List the winners, year and subject where the winner starts with &lt;strong&gt;Sir&lt;/strong&gt;. Show the the most recent first, then by name order.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT winner, yr, subject
+FROM nobel
+WHERE winner LIKE &apos;Sir%&apos;         -- 筛选骑士
+ORDER BY yr DESC, winner ASC;    -- 先年份降序，再姓名升序
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;结果示例&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;winner&lt;/th&gt;
+&lt;th&gt;yr&lt;/th&gt;
+&lt;th&gt;subject&lt;/th&gt;
+&lt;th&gt;排序逻辑说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Sir Peter Ratcliffe&lt;/td&gt;
+&lt;td&gt;2019&lt;/td&gt;
+&lt;td&gt;Medicine&lt;/td&gt;
+&lt;td&gt;年份最新 (2019)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sir Gregory Winter&lt;/td&gt;
+&lt;td&gt;2018&lt;/td&gt;
+&lt;td&gt;Chemistry&lt;/td&gt;
+&lt;td&gt;↓ 年份降序&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sir Fraser Stoddart&lt;/td&gt;
+&lt;td&gt;2016&lt;/td&gt;
+&lt;td&gt;Chemistry&lt;/td&gt;
+&lt;td&gt;↓ 年份降序&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sir John Gurdon&lt;/td&gt;
+&lt;td&gt;2012&lt;/td&gt;
+&lt;td&gt;Medicine&lt;/td&gt;
+&lt;td&gt;同2012年...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sir Martin Evans&lt;/td&gt;
+&lt;td&gt;2007&lt;/td&gt;
+&lt;td&gt;Medicine&lt;/td&gt;
+&lt;td&gt;↓ 年份降序&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;&lt;strong&gt;IN逻辑表达式在条件排序中的使用&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;核心思想：&lt;/strong&gt; 在 &lt;code&gt;ORDER BY&lt;/code&gt; 子句中，利用 &lt;code&gt;CASE&lt;/code&gt; 表达式为符合 &lt;code&gt;IN&lt;/code&gt; 条件的行生成一个特定的值（比如 &lt;code&gt;0&lt;/code&gt;），为不符合条件的行生成另一个值（比如 &lt;code&gt;1&lt;/code&gt;）。然后首先按这个 &lt;code&gt;0/1&lt;/code&gt; 值排序（升序），这样 &lt;code&gt;0&lt;/code&gt;（符合条件的）就自然排在了 &lt;code&gt;1&lt;/code&gt;（不符合条件的）前面。之后，你可以再按其他字段（如名称、ID等）进行二次排序。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;为什么需要这个技巧？&lt;/strong&gt;
+默认情况下，&lt;code&gt;ORDER BY&lt;/code&gt; 只是单纯地按照你指定的列升序或降序排列。它&lt;strong&gt;不会&lt;/strong&gt;自动把 &lt;code&gt;WHERE IN (...)&lt;/code&gt; 筛选出来的结果放在最前面。这个技巧就是为了&lt;strong&gt;强制&lt;/strong&gt;让满足特定 &lt;code&gt;IN&lt;/code&gt; 条件的结果集出现在查询结果的&lt;strong&gt;顶部&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;语法和原理&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;SELECT 列1, 列2, ...
+FROM 表名
+WHERE ... -- 可选的过滤条件
+ORDER BY
+    CASE
+        WHEN 目标列 IN (值1, 值2, 值3, ...) THEN 0 -- 符合条件的给 0
+        ELSE 1 -- 不符合条件的给 1
+    END, -- 首先按这个 0/1 标志排序 (升序 ASC 是默认的, 所以 0 在前)
+    其他排序列1 [ASC|DESC], -- 然后按其他列排序
+    其他排序列2 [ASC|DESC];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;关键点解析&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;CASE&lt;/code&gt; 表达式：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;WHEN 目标列 IN (...) THEN 0&lt;/code&gt;： 检查目标列的值是否在你指定的值列表中。如果是，返回 &lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ELSE 1&lt;/code&gt;： 如果目标列的值&lt;strong&gt;不在&lt;/strong&gt;指定的值列表中，返回 &lt;code&gt;1&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这个 &lt;code&gt;CASE&lt;/code&gt; 表达式为每一行计算出一个&lt;strong&gt;排序权重值&lt;/strong&gt; (&lt;code&gt;0&lt;/code&gt; 或 &lt;code&gt;1&lt;/code&gt;)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;ORDER BY&lt;/code&gt; 子句：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ORDER BY CASE ... END, ...&lt;/code&gt;： 排序的第一优先级就是这个计算出来的 &lt;code&gt;0/1&lt;/code&gt; 权重值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因为 &lt;code&gt;ORDER BY&lt;/code&gt; 默认是升序 (&lt;code&gt;ASC&lt;/code&gt;)，所以 &lt;code&gt;0&lt;/code&gt; 会排在 &lt;code&gt;1&lt;/code&gt; 的前面。所有符合 &lt;code&gt;IN&lt;/code&gt; 条件的行（权重 &lt;code&gt;0&lt;/code&gt;）就会显示在最前面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在权重值排序之后，你可以再按其他需要的列（比如 &lt;code&gt;Name&lt;/code&gt;, &lt;code&gt;ID&lt;/code&gt;, &lt;code&gt;Date&lt;/code&gt; 等）进行排序。这保证了在“符合条件的组”和“不符合条件的组”内部，数据也是有序的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;经典例题&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The expression &lt;strong&gt;subject IN (&apos;chemistry&apos;,&apos;physics&apos;)&lt;/strong&gt; can be used as a value - it will be &lt;strong&gt;0&lt;/strong&gt; or &lt;strong&gt;1&lt;/strong&gt;. Show the 1984 winners and subject ordered by subject and winner name; but list chemistry and physics last.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;思路：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;使用表达式：&lt;code&gt;subject IN (&apos;chemistry&apos;,&apos;physics&apos;)&lt;/code&gt; 会为每条记录返回一个值：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果subject是&apos;chemistry&apos;或&apos;physics&apos;，返回1（TRUE）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;否则返回0（FALSE）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在ORDER BY子句中，我们首先按这个0/1值排序（升序，因为默认ASC，所以0在前，1在后）。这样非化学物理的（0）就会排在前，化学物理的（1）排在后。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后，在同一个组内（比如都是0的组或都是1的组），再按subject（奖项名称）排序，最后按winner（获奖者姓名）排序。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;-- 示例：判断结果
+SELECT 
+  winner,
+  subject
+FROM nobel
+WHERE yr = 1984
+ORDER BY 
+  subject IN (&apos;chemistry&apos;,&apos;physics&apos;), -- 先按0/1排序（0在前，1在后）
+  subject, -- 然后按subject升序（A-Z）
+  winner -- 最后按winner升序（A-Z）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;结果示例：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;winner&lt;/th&gt;
+&lt;th&gt;subject&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Jaroslav Seifert&lt;/td&gt;
+&lt;td&gt;literature&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;César Milstein&lt;/td&gt;
+&lt;td&gt;medicine&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GeorgesF. Köhler&lt;/td&gt;
+&lt;td&gt;medicine&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Niels Jerne&lt;/td&gt;
+&lt;td&gt;medicine&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Desmond Tutu&lt;/td&gt;
+&lt;td&gt;peace&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bruce Merrifield&lt;/td&gt;
+&lt;td&gt;chemistry&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Carlo Rubbia&lt;/td&gt;
+&lt;td&gt;physics&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Simon van der Meer&lt;/td&gt;
+&lt;td&gt;physics&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content:encoded></item><item><title>SQL basic syntax</title><link>https://fishlet.top/posts/sql_learning_note_1/</link><guid isPermaLink="true">https://fishlet.top/posts/sql_learning_note_1/</guid><description>SQL Learning Note_1</description><pubDate>Thu, 26 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;SQL基础语法总结（基于sqlzoo练习）&lt;/h1&gt;
+&lt;p&gt;https://sqlzoo.net/wiki/SELECT_from_WORLD_Tutorial&lt;/p&gt;
+&lt;h2&gt;基础查询结构&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT 列名1, 列名2 AS 别名
+FROM 表名
+WHERE 条件;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;1. SELECT 和 FROM&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：&lt;code&gt;SELECT&lt;/code&gt;用于指定要查询的列，&lt;code&gt;FROM&lt;/code&gt;用于指定要查询的表。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用条件&lt;/strong&gt;：每个查询都必须包含&lt;code&gt;SELECT&lt;/code&gt;和&lt;code&gt;FROM&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT name, population  -- 选择特定列
+SELECT *                 -- 选择所有列
+SELECT area*2 AS doubled_area -- 计算并命名
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;2. WHERE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：&lt;code&gt;WHERE&lt;/code&gt;用于过滤记录，只有满足条件的记录才会被返回。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用条件&lt;/strong&gt;：放在&lt;code&gt;FROM&lt;/code&gt;子句之后，可以配合比较运算符（=, &amp;lt;&amp;gt;, &amp;gt;, &amp;lt;等）和逻辑运算符（AND, OR, NOT）使用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT name FROM world WHERE population &amp;gt; 100000000;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;3. LIKE 和 通配符 %&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;LIKE&lt;/code&gt;用于模式匹配，常与通配符结合使用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;%&lt;/code&gt;代表任意长度的任意字符（包括0个字符）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用条件&lt;/strong&gt;：当需要模糊匹配字符串时使用。注意：&lt;code&gt;LIKE&lt;/code&gt;是大小写敏感的，某些数据库可能需要使用函数（如&lt;code&gt;LOWER&lt;/code&gt;）来忽略大小写。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+-- 匹配以&apos;Al&apos;开头的国家
+
+SELECT name FROM world WHERE name LIKE &apos;Al%&apos;;
+
+-- 匹配包含&apos;united&apos;的国家（不区分大小写）
+
+SELECT name FROM world WHERE LOWER(name) LIKE &apos;%united%&apos;;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;4. LENGTH&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：返回字符串的字符长度（字符数）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用条件&lt;/strong&gt;：需要获取字符串长度时使用。注意：在MySQL中，&lt;code&gt;LENGTH&lt;/code&gt;返回字节数，而&lt;code&gt;CHAR_LENGTH&lt;/code&gt;返回字符数。在其他数据库中（如PostgreSQL），&lt;code&gt;LENGTH&lt;/code&gt;返回字符数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT name, LENGTH(name) AS name_length FROM world;
+WHERE LENGTH(capital) &amp;gt; 10
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;5. ROUND&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：用于对数值进行四舍五入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用条件&lt;/strong&gt;：需要控制数值的小数位数时使用。可以指定保留的小数位数（正数表示小数位，负数表示整数位）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+-- 将人均GDP四舍五入到整数
+
+SELECT name, ROUND(gdp/population) AS per_capita_gdp FROM world;
+
+-- 将面积四舍五入到千位（精确到千）
+
+SELECT name, ROUND(area, -3) AS area_rounded FROM world;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;6. LEFT&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：从字符串左侧开始提取指定数量的字符。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用条件&lt;/strong&gt;：需要提取字符串的前缀时使用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+-- 提取国家名称的前3个字符
+
+SELECT name, LEFT(name, 3) AS prefix FROM world;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;7. 比较运算符：&lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt; 和 &lt;code&gt;!=&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：两者都表示“不等于”。&lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;是标准SQL运算符，&lt;code&gt;!=&lt;/code&gt;是非标准但广泛支持的运算符。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用条件&lt;/strong&gt;：比较两个值是否不相等。可以用于数值、字符串、日期等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：比较时注意大小写敏感问题，以及NULL值（NULL与任何值比较都返回NULL，需要使用&lt;code&gt;IS NULL&lt;/code&gt;或&lt;code&gt;IS NOT NULL&lt;/code&gt;）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+-- 排除欧洲国家
+
+SELECT name FROM world WHERE continent &amp;lt;&amp;gt; &apos;Europe&apos;;
+
+-- 排除人口为0的国家
+
+SELECT name FROM world WHERE population != 0;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;8. 逻辑运算符：AND 和 OR&lt;/h2&gt;
+&lt;p&gt;例题：早期医学奖与后期文学奖&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;展示1910年前（不含1910）的医学奖得主和2004年后（含2004）的文学奖得主的年份、奖项和姓名。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SQL语句&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+SELECT yr, subject, winner
+
+FROM nobel
+
+WHERE
+
+(subject = &apos;Medicine&apos; AND yr &amp;lt; 1910) -- 条件组A：早期医学奖
+
+OR -- 逻辑或
+
+(subject = &apos;Literature&apos; AND yr &amp;gt;= 2004) -- 条件组B：后期文学奖
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;解释&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;条件组A：&lt;code&gt;subject = &apos;Medicine&apos; AND yr &amp;lt; 1910&lt;/code&gt; 筛选出1910年前的医学奖。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;条件组B：&lt;code&gt;subject = &apos;Literature&apos; AND yr &amp;gt;= 2004&lt;/code&gt; 筛选出2004年及以后的文学奖。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用 &lt;strong&gt;OR&lt;/strong&gt; 连接这两组条件，表示满足任意一组条件的记录都会被选中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;9. AS（别名）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;：为列或表指定临时名称（别名），使结果更易读。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;使用条件&lt;/strong&gt;：在&lt;code&gt;SELECT&lt;/code&gt;子句中为列重命名，或在&lt;code&gt;FROM&lt;/code&gt;子句中为表指定别名（简化引用）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+-- 为列指定别名
+
+SELECT name AS country, population AS pop FROM world;
+
+-- 为表指定别名（用于自连接或多表查询）
+
+SELECT w.name, w.continent FROM world AS w;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;10. IN&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;核心功能：&lt;/strong&gt; 筛选匹配多个值的数据&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;IN 的语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;SELECT 列名1, 列名2, ...
+FROM 表名
+WHERE 列名 IN (值1, 值2, 值3, ...);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;WHERE 列名 IN (...)&lt;/code&gt;： 这是关键部分。它告诉数据库：“请找出&lt;code&gt;列名&lt;/code&gt;的值&lt;strong&gt;等于&lt;/strong&gt;括号 &lt;code&gt;(...)&lt;/code&gt; 中列出的&lt;strong&gt;任何一个值&lt;/strong&gt;的那些行”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;(值1, 值2, 值3, ...)&lt;/code&gt;： 这是一个你指定的&lt;strong&gt;值列表&lt;/strong&gt;。这些值可以是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数字&lt;/strong&gt;： &lt;code&gt;WHERE StudentID IN (1001, 1005, 1010)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;文本（字符串）&lt;/strong&gt;： &lt;code&gt;WHERE City IN (&apos;北京&apos;, &apos;上海&apos;, &apos;广州&apos;)&lt;/code&gt; &lt;em&gt;(注意：字符串必须用单引号 &lt;code&gt;&apos;&apos;&lt;/code&gt; 括起来！)&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;日期&lt;/strong&gt;： &lt;code&gt;WHERE OrderDate IN (&apos;2023-10-01&apos;, &apos;2023-11-11&apos;)&lt;/code&gt; &lt;em&gt;(日期格式取决于数据库)&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;列表中的值用&lt;strong&gt;逗号 &lt;code&gt;,&lt;/code&gt;&lt;/strong&gt; 分隔。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>Building a Hugo Static Blog From Scratch</title><link>https://fishlet.top/posts/first/</link><guid isPermaLink="true">https://fishlet.top/posts/first/</guid><description>Exploration of Digital World:My First Blog.</description><pubDate>Thu, 19 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;iframe
+frameborder=&quot;no&quot;
+border=&quot;0&quot;
+marginwidth=&quot;0&quot;
+marginheight=&quot;0&quot;
+width=330
+height=86
+src=&quot;//music.163.com/outchain/player?type=2&amp;amp;id=1887199303&amp;amp;auto=1&amp;amp;height=66&quot;&amp;gt;
+&amp;lt;/iframe&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Background Introduction:&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;It&apos;s a long story,on June 11th, as my expected, I was informed that I didn&apos;t pass the interview part of teaching certificate examination. After a summary review, I decided to do English writing practice on certain platforms. I chose &quot;langcorrect&quot; among many suggestions giving by DeepSeek.&lt;/p&gt;
+&lt;p&gt;On the evening of June 12th, I published my first English writing exercise &lt;em&gt;summary of half past  year&lt;/em&gt;. The next morning, I received one feedback from an Austrian English native speaker, who fixed my mis-expressions and even the punctuation, illustrating natural expressions for my reference.&lt;/p&gt;
+&lt;p&gt;On the other hand, considering my career aspiration, I&apos;d like to explore other options besides roles in international trade or teaching. Then I asked DeepSeek for more information about &quot;technical  writer&quot;, a position I had heard about before. During a conversation, I was exposed to new concepts like &quot;Git&quot;, &quot;Markdown&quot; and &quot;VS Code&quot;.&lt;/p&gt;
+&lt;p&gt;After practicing basic Markdown grammar on StackEdit (a web-based editor), I moved to Obsidian, which unlocks truly immersive writing for personal blog. That sparked my motivation to finally launch my personal blog. According to DeepSeek, I chose Hugo, which is a suitable option for beginners.&lt;/p&gt;
+&lt;h2&gt;Preparation:&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;Git and your Github account&lt;/li&gt;
+&lt;li&gt;Hugo&lt;/li&gt;
+&lt;li&gt;VS Code&lt;/li&gt;
+&lt;li&gt;Your domain&lt;/li&gt;
+&lt;li&gt;Markdown editor (Obsidian or others)&lt;/li&gt;
+&lt;li&gt;Cloudflare account&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Process：&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install Hugo frame ( the version I installed was extended 0.147.8 windows amd64), then put &apos;exe&apos; into &apos;bin&apos; folder. Set up Git and Hugo paths in Environment Variables. Verify their runtime environments.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a Hugo project(your blog) using Git command via Powershell. You can check if your blog folder has been added in &apos;File Explorer&apos;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install &apos;PaperMod&apos; theme. We can use Git command via Powershell to clone that theme from Github.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use VS Code edit your &apos;hugo.yml&apos; file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &apos;hugo server&apos; command in VS Code terminal and then preview your blog site via the localhost URL (such as http://localhost:1313).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add your first &apos;blog.md&apos; file in &apos;content&apos; folder. You can add cover and embed video in your blog by using Hugo shortcodes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a new repository on Github for your blog folders and comments. Here you may     have difficulties in pushing &apos;PaperMod&apos; folder. So please pay attention that your &apos;posts&apos;    folder and &apos;hugo_build.lock&apos; file, you don&apos;t need to push these two into your repository,         so you&apos;re expected to create a &apos;.gitignore&apos; file in your blog folder. And make sure that      &apos;posts&apos; and &apos;hugo_build.lock&apos; are contained in &apos;.igtignore&apos;.&lt;/p&gt;
+&lt;p&gt;Before you push blog folder (we call it as &apos;my_blog&apos;) into Github repository, you have to set up a new folder (We call it as blog_copy) and copy your whole blog folders in it, which makes it convenient for follow-up management. Then delete &apos;my_blog/Git&apos; and &apos;my_blog/themes/PaperMod/.git&apos;.&lt;/p&gt;
+&lt;p&gt;After this you can push &apos;my_blog&apos; folder into Github repository via VS Code. Here the blog&apos;s comment system I use is &apos;giscus&apos;. You should install &apos;giscus&apos; on Github firstly. And then open &apos;discussion&apos; permission and choose settings for your blog repository. After this you can verify functionality via the localhost URL (such as http://localhost:1313).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use Cloudflare deploy your Hugo blog project. Sign in tour Cloudflare and input your domain. Then choose &apos;Compute (workers) - Workers&amp;amp;Pages-Create-Import a repository (connecting your Github account)&apos;, select your blog repository. Pay attention to &apos;Environment variables, here I use HUGO_VERSION = 0.147.8 &apos;.&lt;/p&gt;
+&lt;p&gt;After setting up your application click &apos;create and deploy&apos;. It takes about 5 minutes that Cloudflare auto-provisions DNS and SSL for you, then you can access your blog site with   your domain or &apos;https://your domain&apos;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Reference Tutorials：&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://cloud.tencent.com/developer/article/2530969&quot;&gt;Hugo博客搭建教程以及配置调优&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lt;div class=&quot;bilibili-embed&quot;&amp;gt;
+&amp;lt;iframe
+src=&quot;//player.bilibili.com/player.html?isOutside=true&amp;amp;aid=114099581099423&amp;amp;bvid=BV1bu96YqEXd&amp;amp;cid=28675933741&amp;amp;p=1&quot;
+scrolling=&quot;no&quot;
+border=&quot;0&quot;
+frameborder=&quot;no&quot;
+framespacing=&quot;0&quot;
+allowfullscreen=&quot;true&quot;
+loading=&quot;lazy&quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;lt;/iframe&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>2025 First Half Summary</title><link>https://fishlet.top/posts/summary_of_half_past_year/</link><guid isPermaLink="true">https://fishlet.top/posts/summary_of_half_past_year/</guid><description>Summary of half past year</description><pubDate>Fri, 13 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;iframe
+frameborder=&quot;no&quot;
+border=&quot;0&quot;
+marginwidth=&quot;0&quot;
+marginheight=&quot;0&quot;
+width=330
+height=86
+src=&quot;//music.163.com/outchain/player?type=2&amp;amp;id=2090223074&amp;amp;auto=1&amp;amp;height=66&quot;&amp;gt;
+&amp;lt;/iframe&amp;gt;&lt;/p&gt;
+&lt;p&gt;Good evening, greetings from Teresa, it&apos;s ten minutes to ten. It&apos;s in the middle of june. I&apos;m going to write a brief summary of this past half year.&lt;/p&gt;
+&lt;p&gt;In March,I received news that I had passed the written examination part of the teacher certificate, which is the biggest achievement in the past half year, then I went to Wuhan and spent one week there. Looking for some job opportunities. Finally, two foreign trade companies invited me to an interview, but I turned them down.&lt;/p&gt;
+&lt;p&gt;Staying in the hotel was boring, I decided to go out for a walk in the city along the crowded street and take a look around some parks where the cherry blossoms were blooming. Though I&apos;ve been in this city for four years, I&apos;ve never went cycling along the East Lake until I graduated. It&apos;s an activity I wanted to try for a long time. So one day when it was sunny, I went for it.&lt;/p&gt;
+&lt;p&gt;Spending a few hours there made my day. The only pity is that I don&apos;t live there, otherwise I could ride my bicycle along the East Lake frequently. The last night before I went back home, I went to take a ferry. The ship was crowded with passengers,so I could hardly see the sights along river. The river breeze was pleasant. I felt relaxed on the inside after that week.&lt;/p&gt;
+&lt;p&gt;Since coming back home in the middle of May, I have been preparing for the interview part of the teacher certificate, it was my first time participating in the interview, I was very nervous. As I went into the classroom, my mind was blank. The whole interview took only twenty minutes. When it was completed,I knew I would get a bad result.As I expected, I didn&apos;t pass the interview.&lt;/p&gt;
+&lt;p&gt;Preparation review:
+The part I did badly in was vocabulary, it was easy, actually, but I couldn&apos;t think of anything at that time. On the other hand, I focused on reading and writing, paying little attention to vocabulary and listening and speaking.&lt;/p&gt;
+&lt;p&gt;I didn&apos;t make a specific plan for each area of learning, which led to the lack of key skills when I attended the interview. What&apos;s more, I made mistakes with some of the terms I used during my interview.&lt;/p&gt;
+&lt;p&gt;It&apos;s too late today, so much for this, I&apos;m going to sleep now.&lt;/p&gt;
+</content:encoded></item></channel></rss>

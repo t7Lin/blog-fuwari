@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en" class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]" data-overlayscrollbars-initialize data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 305;--page-width: 75rem;--bg-url: url(assets/images/yunchongyueya.png);--bg-enable: 0;--bg-position: center;--bg-size: cover;--bg-repeat: no-repeat;--bg-attachment: fixed;--bg-opacity: 0.5;"> <head><title>Friends - Chillyt&#39;s blog</title><meta charset="UTF-8"><meta name="description" content="Friends - Chillyt's blog"><meta name="author" content="Chillyt"><meta property="og:site_name" content="Chillyt's blog"><meta property="og:url" content="https://fishlet.top/friends/"><meta property="og:title" content="Friends - Chillyt's blog"><meta property="og:description" content="Friends - Chillyt's blog"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://fishlet.top/friends/"><meta name="twitter:title" content="Friends - Chillyt's blog"><meta name="twitter:description" content="Friends - Chillyt's blog"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.10.1"><link rel="icon" href="./src/assets/images/avatar.png" sizes="128x128"><!-- Set the theme before the page is rendered to avoid a flash --><script>(function(){const DEFAULT_THEME = "auto";
+const LIGHT_MODE = "light";
+const DARK_MODE = "dark";
+const AUTO_MODE = "auto";
+const BANNER_HEIGHT_EXTEND = 30;
+const PAGE_WIDTH = 75;
+const configHue = 305;
+
+			// Load the theme from local storage
+			const theme = localStorage.getItem('theme') || DEFAULT_THEME;
+			switch (theme) {
+				case LIGHT_MODE:
+					document.documentElement.classList.remove('dark');
+					break
+				case DARK_MODE:
+					document.documentElement.classList.add('dark');
+					break
+				case AUTO_MODE:
+					if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+						document.documentElement.classList.add('dark');
+					} else {
+						document.documentElement.classList.remove('dark');
+					}
+			}
+
+			// Load the hue from local storage
+			const hue = localStorage.getItem('hue') || configHue;
+			document.documentElement.style.setProperty('--hue', hue);
+
+			// calculate the --banner-height-extend, which needs to be a multiple of 4 to avoid blurry text
+			let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
+			offset = offset - offset % 4;
+			document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
+			
+			// Background image loading detection
+			const bgUrl = getComputedStyle(document.documentElement).getPropertyValue('--bg-url').trim();
+			const bgEnable = getComputedStyle(document.documentElement).getPropertyValue('--bg-enable').trim();
+
+			if (bgUrl && bgUrl !== 'none' && bgEnable === '1') {
+				const img = new Image();
+				const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
+				if (urlMatch) {
+					img.onload = function() {
+						// 背景图片完全加载后，显示背景并启用卡片透明效果
+						document.body.classList.add('bg-loaded');
+						document.documentElement.style.setProperty('--card-bg', 'var(--card-bg-transparent)');
+						document.documentElement.style.setProperty('--float-panel-bg', 'var(--float-panel-bg-transparent)');
+					};
+					img.onerror = function() {
+						// Keep cards opaque if background image fails to load
+						console.warn('Background image failed to load, keeping cards opaque');
+					};
+					img.src = urlMatch[1];
+				}
+			}
+		})();</script><!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why --><link rel="alternate" type="application/rss+xml" title="Chillyt" href="https://fishlet.top/rss.xml"><link rel="stylesheet" href="/_astro/Layout.DSulWsr7.css">
+<link rel="stylesheet" href="/_astro/Layout.CFwGdNXj.css">
+<link rel="stylesheet" href="/_astro/_page_.B0-S-_sb.css">
+<link rel="stylesheet" href="/_astro/_page_.LLq-1uWJ.css"><script type="module" src="/_astro/page.D6-Kvdo4.js"></script></head> <body class=" min-h-screen transition " data-overlayscrollbars-initialize data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 305;--page-width: 75rem;--bg-url: url(assets/images/yunchongyueya.png);--bg-enable: 0;--bg-position: center;--bg-size: cover;--bg-repeat: no-repeat;--bg-attachment: fixed;--bg-opacity: 0.5;"> <div id="config-carrier" data-hue="305"></div>  <div style="max-width:800px; margin:0 auto; padding:2rem"> <h1 style="font-size:2.5rem; text-align:center; margin-bottom:0.5rem; color:#e91e63">Friends</h1> <p style="text-align:center; color:#666; margin-bottom:2.5rem; font-size:1.1rem"></p> <div style="display:grid; gap:1.8rem"> <!-- Wulnut 卡片 --> <div style="display:flex; background:#fff; border-radius:14px; box-shadow:0 5px 20px rgba(0,0,0,0.05); border:1px solid #eee; overflow:hidden; transition:all 0.3s ease"> <div style="width:120px; min-width:120px; background:#f8f8f8; display:flex; align-items:center; justify-content:center; padding:1.5rem"> <img src="https://pica.zhimg.com/70/v2-5f251aa9c59aa42c3418272b2090ad81_1440w.avis?source=172ae18b&biz_tag=Post" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:3px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,0.1)" alt="Wulnut" onerror="this.src='https://ui-avatars.com/api/?name=Wulnut&background=ff6b6b&color=fff&size=128'"> </div> <div style="padding:1.5rem; flex-grow:1"> <h3 style="margin:0; font-size:1.4rem; color:#e91e63">Wulnut</h3> <p style="margin:0.5rem 0 0; color:#666; line-height:1.5">青山一道同云雨，明月何曾是两乡。</p> <a href="https://www.wulnut.top" style="display:inline-block; margin-top:1rem; color:#2196f3; text-decoration:none; font-weight:500" target="_blank">
+www.wulnut.top →
+</a> </div> </div> <div style="display:grid; gap:1.8rem"> <!-- AcoFork 卡片 --> <div style="display:flex; background:#fff; border-radius:14px; box-shadow:0 5px 20px rgba(0,0,0,0.05); border:1px solid #eee; overflow:hidden; transition:all 0.3s ease"> <div style="width:120px; min-width:120px; background:#f8f8f8; display:flex; align-items:center; justify-content:center; padding:1.5rem"> <img src="https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=5" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:3px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,0.1)" alt="AcoFork" onerror="this.src='https://ui-avatars.com/api/?name=AcoFork&background=ff6b6b&color=fff&size=128'"> </div> <div style="padding:1.5rem; flex-grow:1"> <h3 style="margin:0; font-size:1.4rem; color:#e91e63">AcoFork</h3> <p style="margin:0.5rem 0 0; color:#666; line-height:1.5">Protect what you love.</p> <a href="https://www.afo.im" style="display:inline-block; margin-top:1rem; color:#2196f3; text-decoration:none; font-weight:500" target="_blank">
+www.afo.im →
+</a> </div> </div> <!-- 苏晓晴 卡片 --> <div style="display:flex; background:#fff; border-radius:14px; box-shadow:0 5px 20px rgba(0,0,0,0.05); border:1px solid #eee; overflow:hidden; transition:all 0.3s ease"> <div style="width:120px; min-width:120px; background:#f8f8f8; display:flex; align-items:center; justify-content:center; padding:1.5rem"> <img src="https://q2.qlogo.cn/headimg_dl?dst_uin=3074193836&spec=100" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:3px solid #fff; box-shadow:0 4px 12px rgba(0,0,0,0.1)" alt="苏晓晴" onerror="this.src='https://ui-avatars.com/api/?name=苏晓晴&background=ff6b6b&color=fff&size=128'"> </div> <div style="padding:1.5rem; flex-grow:1"> <h3 style="margin:0; font-size:1.4rem; color:#e91e63">苏晓晴</h3> <p style="margin:0.5rem 0 0; color:#666; line-height:1.5">一个温馨的技术博客</p> <a href="https://www.toubiec.cn/" style="display:inline-block; margin-top:1rem; color:#2196f3; text-decoration:none; font-weight:500" target="_blank">
+www.toubiec.cn →
+</a> </div> </div> <div style="text-align:center; padding:1.8rem; background:linear-gradient(135deg, #fdf2f8, #f0f9ff); border-radius:14px; margin-top:3.5rem; border-left:5px solid #e91e63"> <p style="margin:0; font-size:1.1rem">Want to exchange links? <a href="mailto:chilltian@outlook.com" style="color:#e91e63; text-decoration:none; font-weight:bold">Contact me</a></p> </div> </div> <script type="module">document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("div > div").forEach(e=>{e.addEventListener("mouseenter",function(){this.style.transform="translateY(-8px)",this.style.boxShadow="0 15px 30px rgba(0,0,0,0.1)",this.style.borderColor="#e91e63"}),e.addEventListener("mouseleave",function(){this.style.transform="translateY(0)",this.style.boxShadow="0 5px 20px rgba(0,0,0,0.05)",this.style.borderColor="#eee"})})});</script> </div></div> <!-- increase the page height during page transition to prevent the scrolling animation from jumping --> <div id="page-height-extend" class="hidden h-[300vh]" data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 305;--page-width: 75rem;--bg-url: url(assets/images/yunchongyueya.png);--bg-enable: 0;--bg-position: center;--bg-size: cover;--bg-repeat: no-repeat;--bg-attachment: fixed;--bg-opacity: 0.5;"></div>  <script type="module" src="/_astro/Layout.astro_astro_type_script_index_0_lang.DAHrxWCB.js"></script> <script type="module" src="/_astro/Layout.astro_astro_type_script_index_1_lang.C-LMslGI.js"></script></body></html>
