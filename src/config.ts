@@ -12,11 +12,11 @@ export const siteConfig: SiteConfig = {
 	subtitle: "Adventure awaits!",
 	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
-		hue: 305, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: true, // Hide the theme color picker for visitors
+		hue: 60, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		fixed: false, // Hide the theme color picker for visitors
 	},
 	banner: {
-		enable: true,
+		enable: false,
 		src: 'assets/images/yunchongyueya.png', // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
@@ -26,22 +26,22 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 		background: {
-		enable: false, // Enable background image
+		enable: true, // Enable background image
 		src: "assets/images/yunchongyueya.png", // Background image URL (supports HTTPS)
 		position: "center", // Background position: 'top', 'center', 'bottom'
 		size: "cover", // Background size: 'cover', 'contain', 'auto'
 		repeat: "no-repeat", // Background repeat: 'no-repeat', 'repeat', 'repeat-x', 'repeat-y'
 		attachment: "fixed", // Background attachment: 'fixed', 'scroll', 'local'
-		opacity: 0.5, // Background opacity (0-1)
+		opacity: 0.7, // Background opacity (0-1)
 	},
 	toc: {
 		enable: true, // Display the table of contents on the right side of the post
-		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
+		depth: 1, // Maximum heading depth to show in the table, from 1 to 3
 	},
 	favicon: [    // Leave this array empty to use the default favicon
      {
        src: './src/assets/images/avatar.png',    // Path of the favicon, relative to the /public directory
-       //theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+       //theme: 'dark',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
        sizes: '128x128',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
      }
   ]
