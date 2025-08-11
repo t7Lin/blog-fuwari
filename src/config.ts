@@ -32,7 +32,7 @@ export const siteConfig: SiteConfig = {
 		size: "cover", // Background size: 'cover', 'contain', 'auto'
 		repeat: "no-repeat", // Background repeat: 'no-repeat', 'repeat', 'repeat-x', 'repeat-y'
 		attachment: "fixed", // Background attachment: 'fixed', 'scroll', 'local'
-		opacity: 0.5, // Background opacity (0-1)
+		opacity: 1, // Background opacity (0-1)
 	},
 	toc: {
 		enable: true, // Display the table of contents on the right side of the post
@@ -58,8 +58,8 @@ export const navBarConfig: NavBarConfig = {
   external: false,
 },
 		{
-			name: "GitHub",
-			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
+			name: "CloudMusic",
+			url: "https://music.163.com/#/playlist?id=833322729", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
 	],
