@@ -9,7 +9,7 @@ import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	title: "Chillyt's blog",
-	subtitle: "Adventure awaits!",
+	subtitle: "若有似无的甜",
 	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 60, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -57,18 +57,13 @@ export const navBarConfig: NavBarConfig = {
   url: "/friends/",
   external: false,
 },
-		{
-			name: "CloudMusic",
-			url: "https://music.163.com/#/playlist?id=833322729", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Chillyt",
-	bio: "Some days you bloom.Some days you grow roots.Booth matter.",
+	bio: "Adventure awaits!",
 	links: [
 		{
 			name: "Email",
