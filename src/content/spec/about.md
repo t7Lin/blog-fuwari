@@ -11,4 +11,4 @@
 - QQ : 1431095061
 - Blog:  [fishlet.top](https://fishlet.top/)
 
->  "Evergreen hills abide, crystal streams glide."
+>  "炽热烈火燃烧，静默余烬温存"
