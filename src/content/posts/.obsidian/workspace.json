@@ -8,13 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "766d3298578ff573",
+            "id": "67fb0f194e295747",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "人教版高中英语教材内容梳理（必修一-必修三）.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "人教版高中英语教材内容梳理（必修一-必修三）"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "9998288780dc53ad",
@@ -162,13 +166,13 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f163f3e1ba7c23a0",
+  "active": "67fb0f194e295747",
   "lastOpenFiles": [
+    "charmmy_grass.png",
+    "人教版高中英语教材内容梳理（必修一-必修三）.md",
     "未命名",
-    "未命名.md",
     "测评/未命名.md",
     "测评",
-    "charmmy_grass.png",
     "first.md",
     "sql_learning_note_5.md",
     "sql_learning_note_4.md",
