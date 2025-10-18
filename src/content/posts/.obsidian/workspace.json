@@ -6,7 +6,7 @@
       {
         "id": "11c5d6632f683f3f",
         "type": "tabs",
-        "dimension": 70.46332046332047,
+        "dimension": 70.27027027027027,
         "children": [
           {
             "id": "5999187fbfe26009",
@@ -14,31 +14,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "High School English Textbook/English Grammar points of high school.md",
+                "file": "English_Grammar_Points_of_High_School.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "English Grammar points of high school"
+              "title": "English_Grammar_Points_of_High_School"
             }
           }
         ]
       },
       {
-        "id": "2f255d57ef085149",
+        "id": "bbaa38676d2e0da6",
         "type": "tabs",
-        "dimension": 29.53667953667954,
+        "dimension": 29.72972972972973,
         "children": [
           {
-            "id": "a3ebb3f915779e70",
+            "id": "51bdb87544355381",
             "type": "leaf",
             "state": {
               "type": "mindmapview",
               "state": {
-                "file": "High School English Textbook/English Grammar points of high school-mindmap.md"
+                "file": "English_Grammar_Points_of_High_School-mindmap.md"
               },
               "icon": "blocks",
-              "title": "English Grammar points of high school-mindmap"
+              "title": "English_Grammar_Points_of_High_School-mindmap"
             }
           }
         ]
@@ -200,8 +200,10 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "5999187fbfe26009",
+  "active": "51bdb87544355381",
   "lastOpenFiles": [
+    "English_Grammar_Points_of_High_School.md",
+    "English_Grammar_Points_of_High_School-mindmap.md",
     "High School English Textbook/English Grammar points of high school-mindmap.md",
     "High School English Textbook/English Grammar points of high school.md",
     "High School English Textbook/Relative Clause.md",
@@ -230,8 +232,6 @@
     "The Future Progressive Tense.md",
     "Infinitive.md",
     "charmmy_grass.png",
-    "人教版高中英语教材listening梳理.md",
-    "人教版高中英语教材structure梳理.md",
     "人教版高中英语教材",
     "测评",
     "guide/cover.jpeg"

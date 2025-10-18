@@ -1,12 +1,9 @@
 ---
-title: English Grammar Points of High School 
-published: 2025-10-18
-description: Grammar points
-# image: ./summary_of_half_past_year.png
-tags: [English,Grammar,Summary]
-category: Notes
-draft: false
+
+mindmap-plugin: markdown
+
 ---
+
 # English Grammar points of high school
 
 - ## Basic Sentence Structures
