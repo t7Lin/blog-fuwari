@@ -20,7 +20,7 @@ draft: false
 
 
 
-Good evening, greetings from Teresa, it's ten minutes to ten. It's in the middle of june. I'm going to write a brief summary of this past half year.
+Good evening, greetings from Teresa, it's ten minutes to ten. It's in the middle of June. I'm going to write a brief summary of this past half year.
 
 In March,I received news that I had passed the written examination part of the teacher certificate, which is the biggest achievement in the past half year, then I went to Wuhan and spent one week there. Looking for some job opportunities. Finally, two foreign trade companies invited me to an interview, but I turned them down.
 
