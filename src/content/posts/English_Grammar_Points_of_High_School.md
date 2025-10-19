@@ -2,16 +2,10 @@
 title: English Grammar Points of High School
 published: 2025-10-18
 # description: 
-# image: ./summary_of_half_past_year.png
+image: ./mindmap_English_Grammar_of_High_School.png
 tags: [English,Grammar]
 category: Summary
 draft: false
----
-
----
-
-mindmap-plugin: markdown
-
 ---
 
 # English Grammar points of high school

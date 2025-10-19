@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5c6772db0bbfe698",
+        "id": "c049b5c6469912eb",
         "type": "tabs",
         "children": [
           {
-            "id": "a3c2b33cc6c95b74",
+            "id": "4b1946f3348cd0c2",
             "type": "leaf",
             "state": {
-              "type": "mindmapview",
+              "type": "markdown",
               "state": {
-                "file": "English_Grammar_Points_of_High_School-mindmap.md"
+                "file": "English_Grammar_Points_of_High_School.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "blocks",
-              "title": "English_Grammar_Points_of_High_School-mindmap"
+              "icon": "lucide-file",
+              "title": "English_Grammar_Points_of_High_School"
             }
           }
         ]
@@ -178,10 +180,17 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "a3c2b33cc6c95b74",
+  "active": "4b1946f3348cd0c2",
   "lastOpenFiles": [
+    "charmmy_grass.png",
+    "summary_of_half_past_year.md",
+    "summary_of_half_past_year.png",
+    "English_Grammar_Points_of_High_School.md",
+    "Pasted image 20251019195815.png",
+    "Pasted image 20251019195748.png",
+    "mindmap_English_Grammar_of_High_School.png",
+    "English_Grammar_Points_of_High_School-mindmap-mindmap.md",
     "English_Grammar_Points_of_High_School-mindmap.html",
-    "English_Grammar_Points_of_High_School-mindmap.md",
     "English_Grammar_Points_of_High_School-mindmap.png",
     "English_Grammar_Points_of_High_School-mindmap-export.xmind",
     "English_Grammar_Points_of_High_School.md",
@@ -197,7 +206,6 @@
     "English Grammar points of high school-mindmap.md",
     "未命名.md",
     "未命名-mindmap.md",
-    "summary_of_half_past_year.md",
     "Predicative Clause.md",
     "Subject Clause.md",
     "The Past Perfect Tense.md",
@@ -207,12 +215,9 @@
     "Past Participle VS -ing Form.md",
     "Noun Clause.md",
     "The Present Perfect Passive Voice.md",
-    "summary_of_half_past_year.png",
     "first.md",
     "The Present Perfect Continuous Tense.md",
     "Past Participle.md",
-    "-ing Form.md",
-    "charmmy_grass.png",
     "人教版高中英语教材",
     "测评",
     "guide/cover.jpeg"
