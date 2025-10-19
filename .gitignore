@@ -3,5 +3,6 @@ echo ".DS_Store" >> .gitignore
 echo ".astro" >> .gitignore
 echo "dist" >> .gitignore
 echo ".env" >> .gitignore
+echo "English_Grammar_Points_of_High_School_mindmap.md" >> .gitignore
 echo "pnpm-lock.yaml" >> .gitignore # 可选，推荐保留
 node_modules
