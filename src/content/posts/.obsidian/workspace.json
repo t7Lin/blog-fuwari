@@ -6,7 +6,6 @@
       {
         "id": "11c5d6632f683f3f",
         "type": "tabs",
-        "dimension": 54.15057915057915,
         "children": [
           {
             "id": "5999187fbfe26009",
@@ -25,20 +24,19 @@
         ]
       },
       {
-        "id": "bbaa38676d2e0da6",
+        "id": "5c6772db0bbfe698",
         "type": "tabs",
-        "dimension": 45.84942084942085,
         "children": [
           {
-            "id": "51bdb87544355381",
+            "id": "a3c2b33cc6c95b74",
             "type": "leaf",
             "state": {
               "type": "mindmapview",
               "state": {
-                "file": "English_Grammar_Points_of_High_School_mindmap.md"
+                "file": "English_Grammar_Points_of_High_School-mindmap.md"
               },
               "icon": "blocks",
-              "title": "English_Grammar_Points_of_High_School_mindmap"
+              "title": "English_Grammar_Points_of_High_School-mindmap"
             }
           }
         ]
@@ -200,10 +198,13 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "51bdb87544355381",
+  "active": "a3c2b33cc6c95b74",
   "lastOpenFiles": [
     "English_Grammar_Points_of_High_School.md",
     "English_Grammar_Points_of_High_School-mindmap.md",
+    "English_Grammar_Points_of_High_School_mindmap.md",
+    "sql_learning_note_4.md",
+    "未命名",
     "High School English Textbook/English Grammar points of high school-mindmap.md",
     "High School English Textbook/English Grammar points of high school.md",
     "High School English Textbook/Relative Clause.md",
@@ -229,8 +230,6 @@
     "Past Participle.md",
     "-ing Form.md",
     "The Past Perfect Passive Voice.md",
-    "The Future Progressive Tense.md",
-    "Infinitive.md",
     "charmmy_grass.png",
     "人教版高中英语教材",
     "测评",

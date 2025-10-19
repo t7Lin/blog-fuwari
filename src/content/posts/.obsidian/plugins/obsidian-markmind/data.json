@@ -17,5 +17,5 @@
   "highlightFormat": "\nPage:{{page}}\n<span style=\"color:rgb({{color}})\">■</span>:{{highlightText}}\nComment:{{comment}}\n[📌]({{link}})\n^{{id}}\n",
   "uid": "00p01101000o01100t01300q00q01100p00q00o",
   "setup": 1760760228705,
-  "mindmapRenderType": "html"
+  "mindmapRenderType": "svg"
 }
