@@ -4,26 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "11c5d6632f683f3f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "5999187fbfe26009",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "English_Grammar_Points_of_High_School.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "English_Grammar_Points_of_High_School"
-            }
-          }
-        ]
-      },
-      {
         "id": "5c6772db0bbfe698",
         "type": "tabs",
         "children": [
@@ -200,8 +180,11 @@
   },
   "active": "a3c2b33cc6c95b74",
   "lastOpenFiles": [
-    "English_Grammar_Points_of_High_School.md",
+    "English_Grammar_Points_of_High_School-mindmap.html",
     "English_Grammar_Points_of_High_School-mindmap.md",
+    "English_Grammar_Points_of_High_School-mindmap.png",
+    "English_Grammar_Points_of_High_School-mindmap-export.xmind",
+    "English_Grammar_Points_of_High_School.md",
     "English_Grammar_Points_of_High_School_mindmap.md",
     "sql_learning_note_4.md",
     "未命名",
@@ -229,7 +212,6 @@
     "The Present Perfect Continuous Tense.md",
     "Past Participle.md",
     "-ing Form.md",
-    "The Past Perfect Passive Voice.md",
     "charmmy_grass.png",
     "人教版高中英语教材",
     "测评",
