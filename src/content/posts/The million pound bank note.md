@@ -20,7 +20,7 @@ Roderick: How well do you know London?
 
 Henry: Not at all. It’s my first trip here.
 
-Roderick: ==I wonder, Mr Adams, if you’d mind us asking you a few questions.
+Roderick: I wonder, Mr Adams, if you’d mind us asking you a few questions.
 
 Henry: Not at all. Go right ahead.
 
@@ -70,6 +70,7 @@ You wanna know what he will do about a-million pound note.
 Then, two brothers Henry and Oliver met Henry.
 T:What else do you wanna know?
 S:What will happen next?
+
 ## Presentation
 T: Let's dive into the conversation together and see
 what will happen between them. 
@@ -78,13 +79,13 @@ S:Roderick and Oliver asked Henry some questions to know about Henry.
 
 T: What did Roderick wanna know about Henry?One sentence from the dialogue.
 
-S: ==May we ask what you’re doing in this city and what your plans are?==
+S: == May we ask what you’re doing in this city and what your plans are? ==
  
  T:Did he asked directly like "What are you doing and what are your plans?"How did he ask?
  Put the question behind verb **ask** and change the order of subject and verb.
 
  **Analyse the sentence structure**
- ==Objective clause==
+ == Objective clause ==
  following behind v,serves as an object,leading words(that,wh-,if/weather),
 ## Practice
 Change the following sentences into objective clauses(3 min)
