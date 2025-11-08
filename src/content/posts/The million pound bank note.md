@@ -12,7 +12,7 @@ draft: false
 
 
 ```
-1.题目：**The million pound bank note**；
+1.题目：The million pound bank note；
 
 2.内容：
 
@@ -20,21 +20,21 @@ Roderick: How well do you know London?
 
 Henry: Not at all. It’s my first trip here.
 
-Roderick: ==I wonder, Mr Adams, **if** you’d mind us asking you a few questions.==
+Roderick: ==I wonder, Mr Adams, if you’d mind us asking you a few questions.
 
 Henry: Not at all. Go right ahead.
 
-Roderick: ==May we ask **what** you’re doing in this city and **what** your plans are?==
+Roderick: May we ask what you’re doing in this city and what your plans are?
 
 Henry: Well, I can’t say that I have any plans. I’m hoping to find work. As a matter of fact, I landed in Britain by accident.
 
 Oliver: How is that possible?
 
-Henry: Well, you see, back home I had my own boat. About a month ago, I was sailing out of the bay...(==his eyes stare at **what** is left of the brothers’ dinner on the table==)
+Henry: Well, you see, back home I had my own boat. About a month ago, I was sailing out of the bay...(his eyes stare at what is left of the brothers’ dinner on the table)
 
 Oliver: Well, go on.
 
-Henry: Oh, yes. Well, towards nightfall I found myself carried out to sea by a strong wind. It was all my fault ==I didn’t know whether I could survive until morning==. The next morning I’d just about given myself up for lost when I was spotted by a ship.
+Henry: Oh, yes. Well, towards nightfall I found myself carried out to sea by a strong wind. It was all my fault I didn’t know whether I could survive until morning. The next morning I’d just about given myself up for lost when I was spotted by a ship.
 
 Oliver: And it was the ship that brought you to England.
 
@@ -57,16 +57,17 @@ Henry: I’m afraid I don’t follow you, sir.
 Show pictures from *The million pound bank note*.
 
 **Free talk:** 
+
 T: This man is Henry and he has got a-million pound note.
-If you meet him right now,what are you dying to know about him?
+If you meet him right now,what would you be dying to know about him?
 
 S:How did he got it?
-   What will he do about it?
+What will he do about it?
    
 T: You wanna know how he got a-pound note.
 You wanna know what he will do about a-million pound note.
 
-Now, Two brothers Henry and Oliver met Henry.
+Then, two brothers Henry and Oliver met Henry.
 T:What else do you wanna know?
 S:What will happen next?
 ## Presentation
