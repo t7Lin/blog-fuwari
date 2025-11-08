@@ -1,9 +1,10 @@
 ---
 title: English Grammar Points of High School
 published: 2025-10-18
-# description: 
 image: ./mindmap_English_Grammar_of_High_School.png
-tags: [English,Grammar]
+tags:
+  - English
+  - Grammar
 category: Summary
 draft: false
 ---
@@ -72,7 +73,7 @@ draft: false
 		- #### Restrictive relative clauses (that, which, who, whom, whose)
 		- #### Restrictive relative clauses (where, when, why, prep + which/whom)
 		- #### Restrictive relative clauses
-- #### Non-restrictive relative clauses
+		- #### Non-restrictive relative clauses
 	- ### Predicative clauses
 	- ### Noun clauses
 		- #### Subject clause
