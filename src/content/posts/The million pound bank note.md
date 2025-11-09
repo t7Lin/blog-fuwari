@@ -1,11 +1,10 @@
 ---
-title: The_million_pound_bank_note
+title: The million pound bank note
 published: 2025-11-08
-description: Objective clause,PPP 
-# image:
+description: Objective clause,PPP
 tags:
   - English
-  - 语法课
+  - Grammar
 category: 教案
 draft: false
 ---
@@ -96,7 +95,7 @@ Change the following sentences into objective clauses(3 min)
 in London.
 **Group work:** Use at least three objective clauses to make a dialogue.(5 min)
 **Group presentation**
-## Summary & Homework
+## Summary and Homework
 T: What have we learned about objective clause today?
 **Mind map:** feature,function,usage situation
 
