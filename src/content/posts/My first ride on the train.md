@@ -1,7 +1,7 @@
 ---
 title:  My first ride on the train
 published: 2025-11-09
-description: narration structure,PWP
+description: narrative structure,PWP
 tags:
   - English
   - reading
