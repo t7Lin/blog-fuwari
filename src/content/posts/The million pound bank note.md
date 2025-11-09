@@ -100,7 +100,7 @@ T: What have we learned about objective clause today?
 **Mind map:** feature,function,usage situation
 
 For homework,you have two choices 
-- Complete exercise book.
-- Use 2 objective clauses to write a short paragraph about
+- 1.Complete exercise book.
+- 2.Use 2 objective clauses to write a short paragraph about
   one of your own experiences.
 

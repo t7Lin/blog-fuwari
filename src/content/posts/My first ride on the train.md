@@ -1,7 +1,7 @@
 ---
 title:  My first ride on the train
 published: 2025-11-09
-description: narrative structure,PWP
+description: narrative,discourse features,PWP
 tags:
   - English
   - reading
@@ -26,42 +26,36 @@ draft: false
 ![](https://fb.fenbike.cn/api/tarzan/images/175bb5fed3ecbed.png?width=700)
 
 ## Lead in:
-T: Suppose you will travel to some places,which kinda transportation
-would you like to choose?
-S: Car, air plane,subway,train...
-T: How about in ancient period?
-S: Horses,
-T: Great.Have you heard about that in ancient China,there is a business road in desert,
-at that time people used camels to transported goods to other places. 
-Do you know this road?
-S: Silk Road
-T: That's it. Not only in China, but also in Australia and Afghan used camels 
-as transportation.
+A video about Ghan train.
+T:Suppose you're on this train for two days,what would you expect to see,do and feel ?
+S:Appreciate scenery outside;comfortable...
+T:Today we're going to take the train and travel to Alice Springs with the author together.
 ## Pre-reading
-T: Read the title loudly and make some prediction from it. Try to guess 
-the genre and the main idea of the passage.
-S: Narration. The author's first ride on the train.
-
+**be short for**: abbreviation
+**camel**(picture)
+T: Try to predict the genre, author's tone from the video and the title?
+S: narrative;satisfied
+T:Let's dive into the passage and identify if you're correct. Find out details
+**route,duration,distance,activities**.
 ## While-reading
-T: Let's dive into the passage and see if your predictions are correct.
-While you reading,find out the genre and grasp the main idea of the passage.
-Are you ready?
-S:Go
-T:Let's read it together.
+
+Let's dig more, work in pairs ,divide the passage into two main parts and then use mind maps 
+to conclude the clue of this narrative.(5 min)
+Structure:
+
+|       | Main content          | mood |
+| ----- | --------------------- | ---- |
+| P1-P4 | travel                |      |
+| P5-P7 | history of train Ghan |      |
 ## Post-reading
-Genre:
-Main idea:
-
-T: How did the author write this passage?Try to find out the structure of this passage.
-Work in group and discuss with your group members. You can use a mind map.(5 min)
-
-Group presentation:
-
-T:How did the author think of his travel?
-
+T:How did the author's feeling changed?Why?
+S:Satisfied(travel) - upset(camels were killed)
+We can find the author used two clues writing this narrative, which makes this story impressive and meaningful.
 ## Summary and Homework
 
 
+- 1.If you are the author, write a short paragraph after based on the history of train Ghan.
+- 2.Find another short narrative and conclude its structure by yourselves.
 
 
 
