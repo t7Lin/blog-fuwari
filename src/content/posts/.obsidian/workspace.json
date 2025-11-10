@@ -50,6 +50,34 @@
             }
           },
           {
+            "id": "3131cc8a148dd276",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "A trip to Australia.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "A trip to Australia"
+            }
+          },
+          {
+            "id": "1704c1c344744bed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "British and American English.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "British and American English"
+            }
+          },
+          {
             "id": "7e4eb29271db40a8",
             "type": "leaf",
             "state": {
@@ -78,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -237,13 +265,16 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "921e8903fad3de83",
+  "active": "1704c1c344744bed",
   "lastOpenFiles": [
+    "A trip to Australia.md",
+    "British and American English.md",
+    "2025-11-10.md",
+    "Sports stars.md",
     "A letter from grandpa.md",
     "My first ride on the train.md",
     "The million pound bank note.md",
     "summary_of_half_past_year.md",
-    "Sports stars.md",
     "English_Grammar_Points_of_High_School.md",
     "Relative_Clause.md",
     "charmmy_grass.png",
@@ -273,9 +304,6 @@
     "The Present Continuous Tense.md",
     "The Past Future Tense.md",
     "Past Participle VS -ing Form.md",
-    "Noun Clause.md",
-    "The Present Perfect Passive Voice.md",
-    "first.md",
     "人教版高中英语教材",
     "测评",
     "guide/cover.jpeg"
