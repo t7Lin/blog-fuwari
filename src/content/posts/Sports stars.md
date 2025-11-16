@@ -1,10 +1,10 @@
 ---
 title:  Sports stars
 published: 2025-11-09
-description: biography,cohesive device,PWP
+description: cohensive devices,biography
 tags:
-  - English
-  - reading
+  - Discourse
+  - PWP
 category: 教案
 draft: false
 ---
@@ -45,28 +45,24 @@ S:Sports spirits.
 
 ## Pre-reading
 T:Guys,this poster is Venus and Serena Williams sisters,both of whom are extraordinary tennis players
-Make a prediction from the poster and title,what are you expected to know about?
-S:Career,family,experience,achievement...
-T:Now,let's check and see how does the author tell the story coherently and smoothly
+Make a prediction from the poster and title,predict the genre?
+S:narration...
+T:Now,let's check and see how does the author tell the story
 ## While-reading
 T:Read the article after the tape and find out the main idea 
 S: experience:Career development,family,achievement
 T:In which sequence ?
 S:Past-now. Chronological sequence
 T:Read it again.Work in pairs and mark out words and phrases.(5 min)
+
+## Post-reading
 refer to the two sisters;(reference)
 time;(adverbials)
 logic; (linking words)
 T:By using these cohesive devices,the author makes the story go smoothly and coherently.
 
-## Post-reading
-As you have already learn the story, try to write a short paragraph based on the article.You're supposed to use at least two cohesive devices.(5 min)
-
 ## Summary and Homework
-We have learned cohesive devices,which connect the events, time and people, making whole article more powerful and coherent.
-You have two choices,
-- 1. Using cohesive devices to write a short paragraph about your favorite sports star.
-- 2. Find another biography and identify cohesive devices used.
+
 
 
 

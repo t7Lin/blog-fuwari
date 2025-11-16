@@ -1,10 +1,10 @@
 ---
 title:  British and American English
 published: 2025-11-10
-description: phonatic,loss of plosion,PPP
+description: loss of plosion
 tags:
-  - English
-  - Phonatic
+  - Phonetics
+  - PPP
 category: 教案
 draft: false
 ---

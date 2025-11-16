@@ -1,10 +1,10 @@
 ---
 title:  A trip to Australia
 published: 2025-11-10
-description: listening details comprehension,PWP
+description: listening comprehension
 tags:
-  - English
-  - listening
+  - Listening
+  - PWP
 category: 教案
 draft: false
 ---

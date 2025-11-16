@@ -1,10 +1,10 @@
 ---
-title:  letter from grandpa
+title:  A letter from grandpa
 published: 2025-11-09
-description: Letter writing,PWP
+description: Letter writing
 tags:
-  - English
   - Writing
+  - PWP
 category: 教案
 draft: false
 ---

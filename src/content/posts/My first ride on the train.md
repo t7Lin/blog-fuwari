@@ -1,10 +1,10 @@
 ---
 title:  My first ride on the train
 published: 2025-11-09
-description: narrative,discourse features,PWP
+description: discourse features,narrative
 tags:
-  - English
-  - reading
+  - Discourse
+  - PWP
 category: 教案
 draft: false
 ---

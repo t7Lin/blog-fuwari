@@ -1,10 +1,10 @@
 ---
 title: The million pound bank note
 published: 2025-11-08
-description: Objective clause,PPP
+description: Objective clause
 tags:
-  - English
   - Grammar
+  - PPP
 category: 教案
 draft: false
 ---
