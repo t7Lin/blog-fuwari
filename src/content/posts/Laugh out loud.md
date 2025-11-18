@@ -28,12 +28,13 @@ Let's dive into the story and identify more
 Tense: past tense
 Mark out structure: **had + been v-ing**
 - Everything **had been going** wrong for him. 
+（before he felt depressed）
 - ..., after he **had been feeling** depressed for ==over a month==,...
+(before he went to the doctor)
 - Finally after he **had been waiting** for ==about half an hour==,...
-be + doing
-(time aixs)
+(before he was called into surgery)
 Past perfect continuous tense
-To emphasis activity or status was happening for a while in the past. It's continuous.
+To emphasis activity or status was happening in the past. It's continuous.
 ## Practice
 It had been raining for almost two weeks last month.
 He had been always confident after he won the first rank in the finals.
