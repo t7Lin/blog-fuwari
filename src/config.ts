@@ -27,7 +27,7 @@ export const siteConfig: SiteConfig = {
 	},
 		background: {
 		enable: true, // Enable background image
-		src: "https://fishlet.top/assets/images/yunchongyueya.png", // Background image URL (supports HTTPS)
+		src: "https://wx3.sinaimg.cn/mw2000/6b8c14f8gy1hitrkmp1r2j21fc0ttgr4.jpg", // Background image URL (supports HTTPS)
 		position: "center", // Background position: 'top', 'center', 'bottom'
 		size: "cover", // Background size: 'cover', 'contain', 'auto'
 		repeat: "no-repeat", // Background repeat: 'no-repeat', 'repeat', 'repeat-x', 'repeat-y'
@@ -40,7 +40,7 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [    // Leave this array empty to use the default favicon
      {
-       src: 'https://fishlet.top/_astro/avatar.BPtBpUVj_Z1uJ7zQ.webp',    // Path of the favicon, relative to the /public directory
+       src: 'https://wx3.sinaimg.cn/mw2000/6b8c14f8gy1hitrkmp1r2j21fc0ttgr4.jpg',    // Path of the favicon, relative to the /public directory
        //theme: 'dark',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
        sizes: '128x128',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
      }
@@ -61,7 +61,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "assets/images/yunchongyueya.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Ember",
 	bio: "Adventure awaits!",
 	links: [
