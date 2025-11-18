@@ -3,7 +3,7 @@ title:  If
 published: 2025-11-17
 description: rhythm,rhyme
 tags:
-  - PoemPhonetic
+  - Phonetic
   - PPP
 category: 教案
 draft: false
