@@ -27,7 +27,7 @@ export const siteConfig: SiteConfig = {
 	},
 		background: {
 		enable: true, // Enable background image
-		src: "https://wx3.sinaimg.cn/mw2000/6b8c14f8gy1hitrkmp1r2j21fc0ttgr4.jpg", // Background image URL (supports HTTPS)
+		src: "./assets/images/background.png", // Background image URL (supports HTTPS)
 		position: "center", // Background position: 'top', 'center', 'bottom'
 		size: "cover", // Background size: 'cover', 'contain', 'auto'
 		repeat: "no-repeat", // Background repeat: 'no-repeat', 'repeat', 'repeat-x', 'repeat-y'
@@ -40,7 +40,7 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [    // Leave this array empty to use the default favicon
      {
-       src: 'https://wx3.sinaimg.cn/mw2000/6b8c14f8gy1hitrkmp1r2j21fc0ttgr4.jpg',    // Path of the favicon, relative to the /public directory
+       src: './assets/images/background.png',    // Path of the favicon, relative to the /public directory
        //theme: 'dark',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
        sizes: '128x128',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
      }
