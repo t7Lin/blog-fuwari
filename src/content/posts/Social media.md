@@ -1,5 +1,5 @@
 ---
-title:  Social media
+title:  Social media trends
 published: 2025-11-16
 description: speaking,report
 tags:

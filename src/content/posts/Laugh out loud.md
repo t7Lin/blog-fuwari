@@ -1,5 +1,5 @@
 ---
-title:  Internet
+title:  Laugh out loud
 published: 2025-11-16
 description: past perfect continuous tense,narration
 tags:
