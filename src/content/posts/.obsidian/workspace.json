@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sports stars.md",
+                "file": "A letter from grandpa.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sports stars"
+              "title": "A letter from grandpa"
             }
           },
           {
@@ -146,7 +146,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -178,7 +178,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:Phonetic",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -305,34 +305,35 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "1b209275e4a63866",
+  "active": "93f6ca6fda0f10db",
   "lastOpenFiles": [
-    "Wheels.md",
-    "Music.md",
-    "If.md",
-    "Tense.md",
-    "mindmap_English_Grammar_of_High_School.png",
-    "Laugh out loud.md",
-    "My first ride on the train.md",
-    "Millennium Kids.md",
-    "Internet.md",
-    "Folk dance.md",
+    "A trip to Australia.md",
+    "Active learning.md",
     "British and American English.md",
-    "Tu Youyou.md",
+    "charmmy_grass.png",
+    "English_Grammar_Points_of_High_School.md",
+    "first blog.md",
+    "Folk dance.md",
+    "If.md",
+    "Internet.md",
+    "Laugh out loud.md",
+    "Millennium Kids.md",
+    "mindmap_English_Grammar_of_High_School.png",
+    "Music.md",
+    "My first ride on the train.md",
+    "Relative_Clause.md",
+    "Social media.md",
     "Sports stars.md",
     "Spring Festival.md",
+    "Wheels.md",
+    "Tu Youyou.md",
     "The million pound bank note.md",
-    "Social media.md",
-    "Relative_Clause.md",
-    "first blog.md",
-    "Active learning.md",
+    "未命名.base",
+    "Tense.md",
     "Art exhibition.md",
     "A letter from grandpa.md",
-    "A trip to Australia.md",
-    "English_Grammar_Points_of_High_School.md",
     "2025-11-10.md",
     "summary_of_half_past_year.md",
-    "charmmy_grass.png",
     "summary_of_half_past_year.png",
     "Pasted image 20251019195815.png",
     "Pasted image 20251019195748.png",
@@ -340,7 +341,6 @@
     "English_Grammar_Points_of_High_School-mindmap.html",
     "English_Grammar_Points_of_High_School-mindmap.png",
     "English_Grammar_Points_of_High_School-mindmap-export.xmind",
-    "English_Grammar_Points_of_High_School_mindmap.md",
     "未命名",
     "High School English Textbook",
     "sql_note",

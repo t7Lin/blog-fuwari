@@ -1,5 +1,5 @@
 ---
-title:  Music
+title: Music
 published: 2025-11-18
 description: immitation writing,rhetorical devices
 tags:

@@ -3,7 +3,7 @@ title:  wheels
 published: 2025-11-17
 description: falling rising intonnation
 tags:
-  - Phonetic
+  - Phonetics
   - PPP
 category: 教案
 draft: false
