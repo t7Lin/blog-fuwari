@@ -6,9 +6,9 @@
 ::github{repo="saicaca/fuwari"}
 
 ## Contact
-> Feel free to contact me via:
+> Feel free to contact me:
 - Email: chilltian@outlook.com
 - QQ : 1431095061
 - Blog:  [fishlet.top](https://fishlet.top/)
 
->  "暮霭横江烟万缕，照水参差楼阁"
+>  <font color =#D98719>暮霭横江烟万缕，照水参差楼阁</font>
