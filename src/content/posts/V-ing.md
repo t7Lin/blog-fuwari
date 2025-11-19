@@ -5,7 +5,7 @@ description: contrast gerund and present participle
 tags:
   - Grammar
   - English
-category: 教案
+category: Notes,Summary
 draft: false
 ---
 
