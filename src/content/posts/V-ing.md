@@ -4,7 +4,7 @@ published: 2025-11-19
 description: contrast gerund and present participle
 tags:
   - Grammar
-  - 
+  - English
 category: 教案
 draft: false
 ---
