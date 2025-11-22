@@ -1,11 +1,11 @@
 ---
-title:  V-ing
+title: V-ing
 published: 2025-11-19
-description: contrast gerund and present participle
+description: contrast gerund and present participle,non-finite verb
 tags:
   - Grammar
   - English
-category: Notes,Summary
+category: Summary
 draft: false
 ---
 
