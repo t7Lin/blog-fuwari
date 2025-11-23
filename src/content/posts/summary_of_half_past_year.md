@@ -3,8 +3,8 @@ title: 2025 First Half Summary
 published: 2025-06-13
 description: Summary of half past year
 image: ./summary_of_half_past_year.png
-tags: [Memories, Thoughts]
-category: Reflections
+tags: Thoughts
+category: Summary
 draft: false
 ---
 
