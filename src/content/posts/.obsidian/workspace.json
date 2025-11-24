@@ -46,9 +46,23 @@
               "icon": "lucide-file",
               "title": "我的心在播放煎熬"
             }
+          },
+          {
+            "id": "5c50b6513ddb057a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "词汇课-构词法角度.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "词汇课-构词法角度"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -207,10 +221,11 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "970ca04bafe09e7a",
+  "active": "5c50b6513ddb057a",
   "lastOpenFiles": [
-    "Tu Youyou (2).md",
     "我的心在播放煎熬.md",
+    "词汇课-构词法角度.md",
+    "Tu Youyou (2).md",
     "to do -- Infinitive.md",
     "V-ing -- Gerund and Present Participle.md",
     "mindmap_English_Grammar_of_High_School.png",
@@ -238,7 +253,6 @@
     "未命名.base",
     "summary_of_half_past_year.png",
     "charmmy_grass.png",
-    "Millennium Kids.md",
     "Pasted image 20251019195815.png",
     "Pasted image 20251019195748.png",
     "English_Grammar_Points_of_High_School-mindmap.html",
