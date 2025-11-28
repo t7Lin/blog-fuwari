@@ -1,5 +1,5 @@
 ---
-title:  British and American English
+title: British and American English
 published: 2025-11-10
 description: loss of plosion
 tags:
