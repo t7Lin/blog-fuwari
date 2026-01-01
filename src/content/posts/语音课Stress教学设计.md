@@ -2,8 +2,7 @@
 title: Stress教学设计
 published: 2025-11-27
 description: phonetics,stress,教学设计
-tags:
-  - Phonetics
+tags: [Phonetics]
 category: Summary
 draft: false
 ---
