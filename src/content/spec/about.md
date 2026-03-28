@@ -11,4 +11,4 @@
 - QQ : 1431095061
 - Blog:  [fishlet.top](https://fishlet.top/)
 
->  <font color =#D98719>暮霭横江烟万缕，照水参差楼阁</font>
+>  <font color =#D98719>所有事都不夠虛幻,因現實未到最爛,要到絕望才望見希望在人間.</font>
