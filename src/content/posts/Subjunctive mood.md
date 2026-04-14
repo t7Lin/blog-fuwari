@@ -52,7 +52,7 @@ ask, demand, require, request</font>
 
 >**<font color =#FF2400>It is +adj./n.+that</font>** ，从句谓语用 **<font color =#FF2400>（should）+do</font>**
 
-- 1. **<font color =#FF2400>必须/应该做...</font>，主观，必要的重要的
+- 1. <font color =#FF2400>必须/应该做...</font>，主观，必要的重要的
 
 - **<font color =#FF2400>essential, important, necessary, vital, strange, advisable</font>**
 
@@ -69,13 +69,13 @@ ___
 
 | 句式                                                             | 谓语要求                                                                                    | 例句                                            |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------- |
-| **<font color =#FF2400>It is (high) time that...</font>**该做... | **<font color =#FF2400>did / should do</font>** (不能用 would)                             | It's high time we **went** to bed.            |
-| **<font color =#FF2400>Would rather that...</font>**宁愿         | 现在/将来用 **<font color =#FF2400>did</font>**；过去用 **<font color =#FF2400>had done</font>** | I'd rather you **hadn't told** him the truth. |
-| **<font color =#FF2400>Without / But for...</font>**要不是...     | 主句用 **<font color =#FF2400>would/could have done</font>**                               | But for your help, I **would have failed**.   |
+| <font color =#FF2400>It is (high) time that...</font>该做... | <font color =#FF2400>did / should do</font> (不能用 would)                             | It's high time we **went** to bed.            |
+| <font color =#FF2400>Would rather that...</font>宁愿         | 现在/将来用 <font color =#FF2400>did</font>；过去用 <font color =#FF2400>had done</font>** | I'd rather you **hadn't told** him the truth. |
+| <font color =#FF2400>Without / But for...</font>要不是...     | 主句用 <font color =#FF2400>would/could have done</font>                               | But for your help, I **would have failed**.   |
 ___
 ## Inversion and Ellipsis
 
-**1. If 虚拟条件句的倒装  
+1. If 虚拟条件句的倒装  
 ><font color =#FF2400>省略 If，将 Were / Had / Should提至句首</font>。
 - 原句：If I **were** you, ...
 - 倒装：**Were** I you, ...
