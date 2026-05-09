@@ -8,10 +8,12 @@ category: 教案
 draft: false
 ---
 
-*写在开头，今天看了帅悦老师的公开课之后我的思路豁然开朗，对教案进行了修改。老师的课堂提问循序渐进，活动也设置的环环相扣，每个环节过渡自然。*
+*写在开头，今天看了帅悦老师的公开课，老师的课堂提问循序渐进，活动也设置的环环相扣，每个环节过渡自然，我的思路豁然开朗，对教案进行了修改。*
 # Lead in
-- 1.I guess you all had a nice Labour Day holiday. Did you do anything fun?
-- 2.A big football matach,Chu Super Cup, happened in our city.Have you watched it? Which team you support?Why?
+- I guess you all had a nice Labour Day holiday. Did you do anything fun?
+
+- A big football matach,Chu Super Cup, happened in our city.Have you watched it? Which team you support?Why?
+
 This football match is intense.Sports game always bring us passion.Try to guess our today's topic.
 
 Today we gonna not only talk about sports athelete but also their good qualities.
@@ -23,13 +25,13 @@ A sports magzine.
 - 1. Read the lead paragraph,find out the eidtor's request.
 What does the editer wanna us do?
 
-Living legends is what we're going to learn today.
+Actually,Living legend is what we're going to learn today.
 
 - 2. What does **Living Legends of Sports** mean?
 
-- 3. Could any athlete be a living legend?What two important characteristics do living legend of sports have?
+- 3. What two important characteristics do living legends of sports have?
 
-Masters;
+Masters in their sports;
 Set good example for others
 
 - 4. What makes an athlete be called a master?
@@ -59,9 +61,10 @@ Michael Jordan
 This makes Jordan be called a master
 
 # Post-reading
-- 1. Let's read this text carefully and finish an exercise.(Page39.1)
-- 2.  What good qualities have you learnt from these two Sports Living Legends?Why?
+Conclude
 **good examples they set up for others**
+What good qualities have you learnt from their exemples?Why?
+
 Lang Ping
 2015 World Cup,
 her determination was been tested,why?
@@ -73,15 +76,14 @@ Michael Jordan
 strong mental strength;
 - 2. The Boys and Girls Club helping young people,
 sharing spirits
+
 **Group work**(5min)
 It's your turn to choose another living legend for the soprts magnize eiditor.You need to use some expressions or the way of writing we've learnt today.
 Here is an outline for your reference:
 > Our living legend is__.The following are the reasons why we choose him/her.
 Group presentation
 # Summary
-**Let's review what else we've learnt today**
-- 1. how to make predictions before reading
-- 2. use scanning and skimming skills while reading to helps us know the main idea and detailed information
-- 3. think critically and tell what's a statement/an inference/an opinion in real life
+**Let's review what we've learnt together**(mind map)
+A living legend is not only the achievenments,but the most importment thing is their mental strength.
 # Homework
-Finish your presentation(Page39.5)
+Record a short video to introduce a living legend that you admired.What can you learn from him/her?
