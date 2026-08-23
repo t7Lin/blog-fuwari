@@ -5,7 +5,7 @@ description: infinitive,non-finite verb
 tags:
   - Grammar
   - English
-category: Summary
+category: Notes
 draft: false
 ---
 

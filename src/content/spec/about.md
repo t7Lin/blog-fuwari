@@ -11,4 +11,4 @@
 - QQ : 1431095061
 - Blog:  [fishlet.top](https://fishlet.top/)
 
->  <font color =#D98719>所有事都不夠虛幻,因現實未到最爛,要到絕望才望見希望在人間.</font>
+>  <font color =#D98719>You can cut all the flowers,but you cannot keep spring from coming.</font>

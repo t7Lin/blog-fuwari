@@ -2,8 +2,8 @@
 title: Building a Hugo Static Blog From Scratch
 published: 2025-06-19
 description: Exploration of Digital World:My First Blog.
-tags: [Hugo, Blogging]
-category: Venturing Into Tech
+tags: jottings
+category: Musings
 draft: false
 ---
 

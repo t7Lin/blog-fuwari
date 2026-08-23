@@ -5,7 +5,7 @@ description: contrast gerund and present participle,non-finite verb
 tags:
   - Grammar
   - English
-category: Summary
+category: Notes
 draft: false
 ---
 

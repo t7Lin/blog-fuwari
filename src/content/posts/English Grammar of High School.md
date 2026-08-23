@@ -5,7 +5,7 @@ image: ./mindmap_English_Grammar_of_High_School.png
 tags:
   - English
   - Grammar
-category: Summary
+category: Notes
 draft: false
 ---
 
