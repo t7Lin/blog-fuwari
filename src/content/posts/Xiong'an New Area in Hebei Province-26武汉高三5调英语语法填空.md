@@ -11,6 +11,9 @@ draft: false
 
 >Combining the features of a futuristic tech center and an ecological home, Xiong'an New Area in Hebei Province is a smart city that has been rising in North China since 2017. Built ______ 56 ______ (ease) Beijing’s non-capital functions, the city was planned from scratch and is now powered by digital twin technology, ______ 57 ______ (model) how cities of the future might work.
 >Here, service robots greet visitors in hotels, cafes, shopping malls and libraries. Self-driving taxis glide (滑行) smoothly through the streets, ==offering visitors ______ 58 ______ unusual glimpse of future transport,== ==and drones clean high-rise buildings with ______ 59 ______ (precise).== ==It is a place ______ 60 ______ you can deeply engage yourself in China’s cutting-edge technology and feel the speed of innovation firsthand.==
+
+[[Emphatic sentence]]
+
 >______ 61 ______ the city is not all steel and data. Green space runs through its core. Yuerong Park, with nine classical Chinese gardens, connects to a wider network of parks ______ 62 ______ (tailor) for leisure and outdoor sports. Surrounding the smart city ______ 63 ______ (be) Baiyangdian Lake, known as the “Pearl of North China”. The lake’s abundance adds more charm to the city tour. Its clear ______ 64 ______ (water) support many wild birds and in summer, large fields of lotus flowers cover the wetlands.
 >From its thousands of years of cultural heritage ______ 65 ______ its vision as a smart city of the future, Xiong’an weaves (编织) a beautiful chapter of harmony between tradition and modernity, inviting exploration even as it continues to take shape.
 
