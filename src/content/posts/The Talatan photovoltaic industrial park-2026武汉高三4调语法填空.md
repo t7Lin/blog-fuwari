@@ -6,6 +6,7 @@ tags: [practice]
 category: Notes
 draft: false
 ---
+[塔拉滩光伏产业园-2026.04.武汉](onenote:https://d.docs.live.net/ba2df4a7c0942b23/文档/Dossey%20的笔记本/语法填空.one#塔拉滩光伏产业园-2026.04.武汉&section-id={E018406B-143D-4274-B98E-91834586E6D1}&page-id={4F4EDE7C-0750-4DDF-8FDE-00A133F168A6}&end)  ([Web 视图](https://onedrive.live.com/view.aspx?resid=%7BC0942B23-F4A7-202D-80BA-AA0100000000%7D&id=documents&wd=target%28%E8%AF%AD%E6%B3%95%E5%A1%AB%E7%A9%BA.one%7CE018406B-143D-4274-B98E-91834586E6D1%2F%E5%A1%94%E6%8B%89%E6%BB%A9%E5%85%89%E4%BC%8F%E4%BA%A7%E4%B8%9A%E5%9B%AD-2026.04.%E6%AD%A6%E6%B1%89%7C4F4EDE7C-0750-4DDF-8FDE-00A133F168A6%2F%29))
 
 In Gonghe, Qinghai Province, Yehdor the herder (牧民) ==carries== food and water while watching his sheep graze (吃草) across the summer landscape. Making the scene unique ==is== the blue sea of solar panels overhead, as the sheep’s grazing grounds 56. **are** (be) a photovoltaic (光伏的) industrial park.
   
