@@ -2,7 +2,7 @@
 title: Subjunctive mood
 published: 2026-04-14
 description: subjunctive mood
-tags: [English,Grammar]
+tags: [English]
 category: Notes
 draft: false
 ---

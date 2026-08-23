@@ -1,14 +1,13 @@
 ---
 title: 26高考英语全国一卷语法填空
 published: 2026-07-27
-description: 语法填空考点分析
-tags: English
+description: Daji
+tags: [English]
 category: Notes
 draft: false
 ---
 
-https://onedrive.live.com/view.aspx?resid=%7BC0942B23-F4A7-202D-80BA-AA0100000000%7D&id=documents&wd=target%28%E6%96%B0%E5%88%86%E5%8C%BA%201.one%7CE018406B-143D-4274-B98E-91834586E6D1%2F2026%E9%AB%98%E8%80%83%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E5%A1%AB%E7%A9%BA%EF%BC%88%E5%8D%B7%E4%B8%80%EF%BC%89%7CE7EBC80A-4393-49DC-AB67-2B8060C6D7A9%2F%29
-onenote:https://d.docs.live.net/ba2df4a7c0942b23/文档/Dossey%20的笔记本/新分区%201.one#2026高考英语语法填空（卷一）&section-id={E018406B-143D-4274-B98E-91834586E6D1}&page-id={E7EBC80A-4393-49DC-AB67-2B8060C6D7A9}&end
+[2026高考英语语法填空（卷一）](onenote:https://d.docs.live.net/ba2df4a7c0942b23/文档/Dossey%20的笔记本/新分区%201.one#2026高考英语语法填空（卷一）&section-id={E018406B-143D-4274-B98E-91834586E6D1}&page-id={E7EBC80A-4393-49DC-AB67-2B8060C6D7A9}&end)  ([Web 视图](https://onedrive.live.com/view.aspx?resid=%7BC0942B23-F4A7-202D-80BA-AA0100000000%7D&id=documents&wd=target%28%E6%96%B0%E5%88%86%E5%8C%BA%201.one%7CE018406B-143D-4274-B98E-91834586E6D1%2F2026%E9%AB%98%E8%80%83%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95%E5%A1%AB%E7%A9%BA%EF%BC%88%E5%8D%B7%E4%B8%80%EF%BC%89%7CE7EBC80A-4393-49DC-AB67-2B8060C6D7A9%2F%29))
 
 Daji, or big open-air fairs, typically take place on specific dates of the lunar calendar, for example, on dates with five or seven as the last digit. It is also common for them 56 (hold) to be held during traditional Chinese holidays such as the Spring Festival and the Mid-Autumn Festival, as well as other local festivals. The exact dates and 57 (frequent) frequency of daji vary from region to region.
 

@@ -2,9 +2,7 @@
 title: V-ing
 published: 2025-11-19
 description: contrast gerund and present participle,non-finite verb
-tags:
-  - Grammar
-  - English
+tags: [English]
 category: Notes
 draft: false
 ---

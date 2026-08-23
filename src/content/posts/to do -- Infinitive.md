@@ -2,9 +2,7 @@
 title: to do -- Infinitive
 published: 2025-11-22
 description: infinitive,non-finite verb
-tags:
-  - Grammar
-  - English
+tags: [English]
 category: Notes
 draft: false
 ---

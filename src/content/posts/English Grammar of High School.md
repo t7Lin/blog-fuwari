@@ -2,9 +2,7 @@
 title: English Grammar Points of High School
 published: 2025-10-18
 image: ./mindmap_English_Grammar_of_High_School.png
-tags:
-  - English
-  - Grammar
+tags: [English]
 category: Notes
 draft: false
 ---

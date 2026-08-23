@@ -2,7 +2,7 @@
 title: Building a Hugo Static Blog From Scratch
 published: 2025-06-19
 description: Exploration of Digital World:My First Blog.
-tags: jottings
+tags: [jottings]
 category: Musings
 draft: false
 ---

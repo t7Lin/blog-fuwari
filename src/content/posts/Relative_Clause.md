@@ -3,7 +3,7 @@ title: Relative Clause
 published: 2025-10-15
 description: relative clause
 # image: ./summary_of_half_past_year.png
-tags: [English,Grammar]
+tags: [English]
 category: Notes
 draft: false
 ---
